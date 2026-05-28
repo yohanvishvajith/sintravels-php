@@ -1,0 +1,51 @@
+.interactive-map {
+    padding: 4rem 0;
+    background-color: #ffffff;
+}
+
+.map-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.map-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.map-subtitle {
+    font-size: 1.2rem;
+    color: #6b7280;
+    margin-bottom: 3rem;
+}
+
+#world-map {
+    width: 100%;
+    height: 600px;
+}
+
+.country {
+    fill: #e5e7eb;
+    stroke: #ffffff;
+    stroke-width: 0.5px;
+    transition: fill 0.3s ease;
+}
+
+.country.highlighted {
+    fill: #2563eb;
+}
+
+#map-tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 1rem;
+}

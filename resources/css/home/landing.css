@@ -1,0 +1,167 @@
+.container-home {
+    width: 100%;
+    background-color: aqua;
+}
+.landing-img-wrapper {
+    width: 100%;
+    overflow: hidden;
+    height: 700px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+.landing-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.landing-img-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(30, 64, 175, 0.8); /* stronger blue tint */
+    pointer-events: none;
+    z-index: 1;
+}
+.landing-img-wrapper img {
+    position: relative;
+    z-index: 0;
+}
+.overlay-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2rem;
+    font-weight: normal;
+    z-index: 2;
+    width: 90%;
+    max-width: 900px;
+    box-sizing: border-box;
+}
+.overlay-content h1 {
+    font-size: clamp(2rem, 6.5vw, 3.5rem);
+    text-align: center;
+    margin-bottom: clamp(0.5rem, 2vw, 1.25rem);
+    font-weight: 700;
+    line-height: 1.05;
+}
+.overlay-content p {
+    font-size: clamp(0.95rem, 2.8vw, 1.3rem);
+    text-align: center;
+    margin-bottom: clamp(0.75rem, 2.5vw, 1.5rem);
+    font-weight: 400; /* make description paragraph normal weight (not bold) */
+    max-width: 48ch;
+}
+
+.btn-watch-story {
+    background: white;
+    color: black;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+.stats {
+    display: flex;
+    gap: clamp(0.3rem, 1.5vw, 1.5rem);
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(4px, 1vw, 12px) clamp(6px, 1.5vw, 16px);
+    text-align: center;
+    flex-shrink: 1;
+    min-width: 0;
+}
+
+.stat-item h2 {
+    margin: 0 0 0.25rem 0;
+    font-weight: 700;
+    color: #60a5fa; /* keep accent color from earlier */
+    /* responsive number size */
+    font-size: clamp(1.25rem, 6.5vw, 2.25rem);
+    line-height: 1;
+}
+
+.stat-item p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: clamp(0.85rem, 2.2vw, 1rem);
+}
+
+@media (min-width: 900px) {
+    .overlay-content {
+        width: 95%;
+    }
+}
+
+/* ensure buttons and stats wrap nicely on small screens */
+.btn-group {
+    display: flex;
+    gap: clamp(0.5rem, 1.5vw, 0.75rem);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (max-width: 420px) {
+    .overlay-content {
+        width: 94%;
+    }
+    .overlay-content h1 {
+        text-align: center;
+        margin-bottom: 0.5rem;
+        font-size: 1.8rem;
+    }
+    .overlay-content p {
+        text-align: center;
+        margin-bottom: 0.75rem;
+        font-size: 0.9rem;
+    }
+    .stat-item h2 {
+        font-size: 1.2rem;
+    }
+    .stat-item p {
+        font-size: 0.75rem;
+    }
+    .stats {
+        gap: 0.3rem;
+    }
+    .overlay-content .btn-group .btn-find-jobs,
+    .overlay-content .btn-group .btn-watch-story {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+        min-width: 85px;
+    }
+}
+
+/* Responsive buttons: scale and stack on small screens */
+.overlay-content .btn-group .btn-find-jobs,
+.overlay-content .btn-group .btn-watch-story {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    padding: clamp(0.3rem, 1.2vw, 0.65rem) clamp(0.5rem, 2vw, 1rem);
+    min-width: 100px;
+}
+
+/* Make buttons full width and stacked on narrow screens */
+@media (max-width: 540px) {
+    .overlay-content .btn-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .overlay-content .btn-group .btn-find-jobs,
+    .overlay-content .btn-group .btn-watch-story {
+        width: 100%;
+        min-width: 0;
+    }
+}

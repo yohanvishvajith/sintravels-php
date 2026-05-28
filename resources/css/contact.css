@@ -1,0 +1,387 @@
+/* ===========================
+   CONTACT PAGE STYLES (cnt-)
+   =========================== */
+
+/* ---- Breadcrumb ---- */
+.cnt-breadcrumb {
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
+}
+.cnt-breadcrumb-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(1rem, 3vw, 1.5rem) clamp(1rem, 4vw, 2rem);
+}
+.cnt-breadcrumb-nav {
+    margin-bottom: 1rem;
+}
+.cnt-breadcrumb-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.375rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+.cnt-breadcrumb-list a {
+    color: #6b7280;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.cnt-breadcrumb-list a:hover {
+    color: #111827;
+}
+.cnt-breadcrumb-sep {
+    display: flex;
+    align-items: center;
+    color: #9ca3af;
+}
+.cnt-breadcrumb-current {
+    color: #111827;
+    font-weight: 500;
+}
+.cnt-breadcrumb-title h1 {
+    font-size: clamp(1.5rem, 3vw, 1.875rem);
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 0.5rem;
+}
+.cnt-breadcrumb-title p {
+    color: #6b7280;
+    margin: 0;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+/* ---- Hero ---- */
+.cnt-hero {
+    background: linear-gradient(135deg, #2563eb 0%, #0d9488 100%);
+    color: #fff;
+    padding: clamp(3rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
+    text-align: center;
+}
+.cnt-hero-inner {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.cnt-hero-content h2 {
+    font-size: clamp(1.75rem, 5vw, 3rem);
+    font-weight: 700;
+    margin: 0 0 1.25rem;
+    line-height: 1.2;
+}
+.cnt-hero-content > p {
+    font-size: clamp(0.95rem, 2vw, 1.25rem);
+    color: #bfdbfe;
+    margin: 0 0 2rem;
+    line-height: 1.6;
+}
+.cnt-hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(1rem, 3vw, 2rem);
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+}
+.cnt-hero-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* ---- Shared Container ---- */
+.cnt-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 4vw, 2rem);
+}
+
+/* ---- Info Cards ---- */
+.cnt-info-section {
+    background: #fff;
+    padding: clamp(3rem, 6vw, 5rem) 0;
+}
+.cnt-info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(1rem, 2vw, 2rem);
+}
+.cnt-info-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    padding: clamp(1.25rem, 3vw, 1.75rem);
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    transition:
+        box-shadow 0.3s,
+        transform 0.3s;
+}
+.cnt-info-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+}
+.cnt-info-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    margin: 0 auto 1rem;
+}
+.cnt-icon-blue {
+    background: #eff6ff;
+    color: #2563eb;
+}
+.cnt-icon-green {
+    background: #f0fdf4;
+    color: #16a34a;
+}
+.cnt-icon-orange {
+    background: #fff7ed;
+    color: #ea580c;
+}
+.cnt-icon-purple {
+    background: #faf5ff;
+    color: #9333ea;
+}
+.cnt-info-card h3 {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 0.25rem;
+}
+.cnt-info-sub {
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin: 0 0 0.75rem;
+}
+.cnt-info-val {
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    font-weight: 500;
+    color: #111827;
+    margin: 0.2rem 0;
+    word-break: break-all;
+}
+
+/* ---- Form + Map ---- */
+.cnt-form-section {
+    background: #f9fafb;
+    padding: clamp(3rem, 6vw, 5rem) 0;
+}
+.cnt-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(1.5rem, 3vw, 3rem);
+    align-items: start;
+}
+.cnt-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+.cnt-card-header {
+    padding: clamp(1.25rem, 3vw, 1.75rem);
+    border-bottom: 1px solid #f3f4f6;
+}
+.cnt-card-header h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 0.5rem;
+}
+.cnt-card-icon {
+    color: #2563eb;
+    flex-shrink: 0;
+}
+.cnt-card-header p {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin: 0;
+}
+.cnt-card-body {
+    padding: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+/* Form fields */
+.cnt-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.cnt-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+.cnt-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+.cnt-field label {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+}
+.cnt-field input,
+.cnt-field select,
+.cnt-field textarea {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    background: #fff;
+    color: #111827;
+    outline: none;
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+.cnt-field input:focus,
+.cnt-field select:focus,
+.cnt-field textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+.cnt-field textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+.cnt-field select {
+    appearance: auto;
+    cursor: pointer;
+}
+.cnt-submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.75rem 2rem;
+    background: #2563eb;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition:
+        background 0.2s,
+        transform 0.2s;
+    font-family: inherit;
+}
+.cnt-submit-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+/* Map */
+.cnt-map-card {
+    height: 100%;
+}
+.cnt-map-wrapper {
+    height: 480px;
+}
+.cnt-map-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+/* ---- FAQ ---- */
+.cnt-faq-section {
+    background: #fff;
+    padding: clamp(3rem, 6vw, 5rem) 0;
+}
+.cnt-section-header {
+    text-align: center;
+    margin-bottom: clamp(2rem, 4vw, 4rem);
+}
+.cnt-section-header h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 0.75rem;
+}
+.cnt-section-header p {
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    color: #6b7280;
+    margin: 0 auto;
+    max-width: 600px;
+}
+.cnt-faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(1rem, 2vw, 2rem);
+    max-width: 900px;
+    margin: 0 auto;
+}
+.cnt-faq-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    padding: clamp(1.25rem, 3vw, 1.5rem);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+.cnt-faq-card h4 {
+    font-size: clamp(0.9rem, 2vw, 1.05rem);
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 0.75rem;
+    line-height: 1.4;
+}
+.cnt-faq-card p {
+    font-size: clamp(0.82rem, 1.8vw, 0.9rem);
+    color: #6b7280;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+    .cnt-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .cnt-form-grid {
+        grid-template-columns: 1fr;
+    }
+    .cnt-map-wrapper {
+        height: 380px;
+    }
+}
+
+@media (max-width: 640px) {
+    .cnt-info-grid {
+        grid-template-columns: 1fr;
+    }
+    .cnt-form-row {
+        grid-template-columns: 1fr;
+    }
+    .cnt-faq-grid {
+        grid-template-columns: 1fr;
+    }
+    .cnt-hero-badges {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+}

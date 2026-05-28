@@ -1,0 +1,134 @@
+.career-solutions {
+    padding: 4rem 0;
+    background-color: #ffffff;
+}
+
+.solutions-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.solutions-heading h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.solutions-heading p {
+    font-size: 1.2rem;
+    color: #6b7280;
+    margin-bottom: 3rem;
+}
+
+.solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    text-align: left;
+}
+
+.solution-card {
+    background-color: #f9fafb;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition:
+        box-shadow 0.3s ease,
+        transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.solution-card:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+/* Hover colors: First row (blue, green, orange), Last row (purple, green, orange) */
+.solution-card:nth-child(1):hover {
+    background-color: #dbeafe; /* light blue */
+}
+
+.solution-card:nth-child(2):hover {
+    background-color: #dcfce7; /* light green */
+}
+
+.solution-card:nth-child(3):hover {
+    background-color: #fedba8; /* light orange */
+}
+
+.solution-card:nth-child(4):hover {
+    background-color: #ede9fe; /* light purple */
+}
+
+.solution-card:nth-child(5):hover {
+    background-color: #dcfce7; /* light green */
+}
+
+.solution-card:nth-child(6):hover {
+    background-color: #fedba8; /* light orange */
+}
+
+.solution-card i {
+    font-size: 2.5rem;
+    color: #2563eb;
+    margin-bottom: 1.5rem;
+}
+
+/* Permanent icon colors: blue, green, orange, purple, green, orange */
+.solution-card:nth-child(1) i {
+    color: #2563eb; /* blue */
+}
+
+.solution-card:nth-child(2) i {
+    color: #10b981; /* green */
+}
+
+.solution-card:nth-child(3) i {
+    color: #fb923c; /* orange */
+}
+
+.solution-card:nth-child(4) i {
+    color: #8b5cf6; /* purple */
+}
+
+.solution-card:nth-child(5) i {
+    color: #10b981; /* green */
+}
+
+.solution-card:nth-child(6) i {
+    color: #fb923c; /* orange */
+}
+
+.solution-card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.solution-card p {
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+}
+
+.solution-card ul {
+    list-style-type: none;
+    padding: 0;
+    color: #4b5563;
+}
+
+.solution-card ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.solution-card ul li::before {
+    content: "\f00c"; /* Font Awesome check icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: #10b981; /* Green check */
+}

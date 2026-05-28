@@ -1,0 +1,139 @@
+@import "tailwindcss";
+@import "./header.css";
+@import "./footer.css";
+@import "./home/home.css";
+@import "./service/service.css";
+@import "./jobs.css";
+html,
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.main-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 55px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* ---- Shared Breadcrumb Component ---- */
+.bc-bar {
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
+}
+.bc-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: clamp(1rem, 3vw, 1.5rem) clamp(1rem, 4vw, 2rem);
+}
+.bc-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 1rem;
+}
+.bc-nav a {
+    color: #6b7280;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.bc-nav a:hover {
+    color: #111827;
+}
+.bc-nav i {
+    color: #9ca3af;
+    font-size: 0.7rem;
+}
+.bc-nav span {
+    color: #111827;
+    font-weight: 500;
+}
+.bc-title h1 {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 0.4rem;
+}
+.bc-title p {
+    color: #6b7280;
+    margin: 0;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+/* ---- WhatsApp Floating Button ---- */
+.wa-float {
+    position: fixed;
+    bottom: 1.75rem;
+    right: 1.75rem;
+    z-index: 9999;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 18px rgba(37, 211, 102, 0.5);
+    text-decoration: none;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    animation: wa-pulse 2.5s infinite;
+    overflow: hidden;
+}
+.wa-float img {
+    width: 58px;
+    height: 58px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+.wa-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 24px rgba(37, 211, 102, 0.65);
+    animation: none;
+}
+@keyframes wa-pulse {
+    0%,
+    100% {
+        box-shadow: 0 4px 18px rgba(37, 211, 102, 0.5);
+    }
+    50% {
+        box-shadow: 0 4px 28px rgba(37, 211, 102, 0.85);
+    }
+}
+.wa-float-tooltip {
+    position: absolute;
+    right: 68px;
+    background: #111827;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.3rem 0.7rem;
+    border-radius: 0.375rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+.wa-float-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -5px;
+    transform: translateY(-50%);
+    border: 5px solid transparent;
+    border-left-color: #111827;
+    border-right: none;
+}
+.wa-float:hover .wa-float-tooltip {
+    opacity: 1;
+}

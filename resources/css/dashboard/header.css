@@ -1,0 +1,88 @@
+/* Admin Dashboard Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 240px;
+    width: calc(100% - 240px);
+    height: 64px;
+    box-sizing: border-box;
+    z-index: 80;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    background: linear-gradient(135deg, #9f2c2c 0%, #8a2626 100%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    gap: 1.5rem;
+    transition:
+        left 0.3s ease,
+        width 0.3s ease;
+}
+
+/* When sidebar is collapsed, expand header */
+.sidebar.collapsed ~ .header {
+    left: 0;
+    width: 100%;
+}
+
+.header-menu {
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-menu:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.header-icon {
+    font-size: 1.25rem;
+}
+
+.header-title {
+    margin: 0;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    flex: 1;
+}
+
+.header-user {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.user-name {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+    .header-user {
+        font-size: 0.8rem;
+    }
+
+    .user-name {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 0 1rem;
+    }
+
+    .header-title {
+        font-size: 1.2rem;
+    }
+}

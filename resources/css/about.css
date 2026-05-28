@@ -1,0 +1,671 @@
+/* ===========================
+   About Page Styles
+   =========================== */
+
+.abt-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 4vw, 2rem);
+}
+
+.abt-text-center {
+    text-align: center;
+}
+
+/* Breadcrumb */
+.abt-breadcrumb-bar {
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 1.5rem 0;
+}
+
+.abt-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 1rem;
+}
+
+.abt-breadcrumb a {
+    color: #6b7280;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.abt-breadcrumb a:hover {
+    color: #111827;
+}
+
+.abt-breadcrumb svg {
+    color: #9ca3af;
+    flex-shrink: 0;
+}
+
+.abt-breadcrumb span {
+    color: #111827;
+    font-weight: 500;
+}
+
+.abt-breadcrumb-title h1 {
+    font-size: clamp(1.75rem, 4vw, 2rem);
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 0.5rem 0;
+}
+
+.abt-breadcrumb-title p {
+    color: #6b7280;
+    margin: 0;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+/* Hero */
+.abt-hero {
+    background: linear-gradient(135deg, #2563eb 0%, #14b8a6 100%);
+    color: white;
+    padding: clamp(3rem, 8vw, 5rem) 0;
+}
+
+.abt-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+}
+
+.abt-hero-text h2 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+}
+
+.abt-hero-text p {
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    color: #bfdbfe;
+    margin-bottom: 1rem;
+    line-height: 1.75;
+}
+
+.abt-hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+/* Buttons */
+.abt-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: white;
+    color: #2563eb;
+    padding: 0.75rem 1.75rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition:
+        background 0.2s,
+        transform 0.2s;
+    white-space: nowrap;
+}
+
+.abt-btn-primary:hover {
+    background: #f0f9ff;
+    transform: translateY(-2px);
+}
+
+.abt-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: white;
+    padding: 0.75rem 1.75rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border: 2px solid white;
+    transition:
+        background 0.2s,
+        color 0.2s,
+        transform 0.2s;
+    white-space: nowrap;
+}
+
+.abt-btn-outline:hover {
+    background: white;
+    color: #2563eb;
+    transform: translateY(-2px);
+}
+
+/* Stats grid */
+.abt-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.abt-stat-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    padding: clamp(1rem, 3vw, 1.5rem);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.abt-stat-card svg {
+    color: white;
+}
+
+.abt-stat-number {
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-weight: 700;
+    color: white;
+}
+
+.abt-stat-label {
+    font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+    color: #bfdbfe;
+}
+
+/* Section header */
+.abt-section-header {
+    text-align: center;
+    margin-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+.abt-section-header h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 0.75rem;
+}
+
+.abt-section-header p {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: #6b7280;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Mission & Vision */
+.abt-mission-section {
+    padding: clamp(3rem, 8vw, 5rem) 0;
+    background: white;
+}
+
+.abt-mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.abt-mission-card {
+    border-radius: 12px;
+    padding: clamp(1.5rem, 4vw, 2rem);
+    border: 1px solid;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.abt-mission-card--blue {
+    background: linear-gradient(135deg, #eff6ff, #f0fdfa);
+    border-color: #93c5fd;
+}
+
+.abt-mission-card--teal {
+    background: linear-gradient(135deg, #f0fdfa, #eff6ff);
+    border-color: #5eead4;
+}
+
+.abt-mission-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.abt-mission-card-header h3 {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+}
+
+.abt-mission-card p {
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+    color: #374151;
+    line-height: 1.75;
+    margin: 0;
+}
+
+.icon-blue {
+    color: #2563eb;
+}
+.icon-teal {
+    color: #0d9488;
+}
+
+/* Core Values */
+.abt-values-section {
+    padding: clamp(3rem, 8vw, 5rem) 0;
+    background: #f9fafb;
+}
+
+.abt-values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.abt-value-card {
+    background: white;
+    border-radius: 12px;
+    padding: clamp(1.25rem, 3vw, 1.75rem);
+    border: 1px solid #e5e7eb;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.abt-value-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.abt-value-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.abt-value-icon--award,
+.abt-value-icon--calendar {
+    background: rgba(37, 99, 235, 0.1);
+    color: #2563eb;
+}
+
+.abt-value-icon--target,
+.abt-value-icon--briefcase {
+    background: rgba(13, 148, 136, 0.1);
+    color: #0d9488;
+}
+
+.abt-value-icon--trending-up {
+    background: rgba(234, 88, 12, 0.1);
+    color: #ea580c;
+}
+
+.abt-value-icon--users {
+    background: rgba(124, 58, 237, 0.1);
+    color: #7c3aed;
+}
+
+.abt-value-icon--heart {
+    background: rgba(219, 39, 119, 0.1);
+    color: #db2777;
+}
+
+.abt-value-icon--globe {
+    background: rgba(22, 163, 74, 0.1);
+    color: #16a34a;
+}
+
+.abt-value-card h3 {
+    font-size: clamp(0.8rem, 1.4vw, 0.9rem);
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+}
+
+.abt-value-card p {
+    font-size: clamp(0.8rem, 1.5vw, 0.875rem);
+    color: #6b7280;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Journey / Timeline */
+.abt-journey-section {
+    padding: clamp(3rem, 8vw, 5rem) 0;
+    background: white;
+}
+
+.abt-timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.abt-timeline-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: #bfdbfe;
+    top: 0;
+}
+
+.abt-timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: clamp(2rem, 5vw, 3rem);
+    position: relative;
+}
+
+.abt-timeline-item--left {
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.abt-timeline-item--right {
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.abt-timeline-item--left .abt-timeline-card {
+    width: 45%;
+    text-align: right;
+    margin-right: auto;
+    padding-right: 2.5rem;
+}
+
+.abt-timeline-item--right .abt-timeline-card {
+    width: 45%;
+    text-align: left;
+    margin-left: auto;
+    padding-left: 2.5rem;
+}
+
+.abt-timeline-dot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 16px;
+    background: #2563eb;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 0 0 2px #2563eb;
+    z-index: 1;
+    flex-shrink: 0;
+}
+
+.abt-timeline-card {
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: clamp(1rem, 3vw, 1.5rem);
+    transition: box-shadow 0.3s ease;
+}
+
+.abt-timeline-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.abt-timeline-year {
+    display: inline-block;
+    background: #dbeafe;
+    color: #1d4ed8;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.75rem;
+    border-radius: 9999px;
+    margin-bottom: 0.5rem;
+}
+
+.abt-timeline-card h3 {
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 0.5rem 0;
+}
+
+.abt-timeline-card p {
+    font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+    color: #6b7280;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Team Slider */
+.abt-team-section {
+    padding: clamp(3rem, 8vw, 5rem) 0;
+    background: #f9fafb;
+}
+
+.abt-team-slider-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.abt-team-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    text-align: center;
+}
+
+.abt-team-photo {
+    width: clamp(220px, 40vw, 320px);
+    height: clamp(220px, 40vw, 320px);
+    border-radius: 10px;
+    overflow: hidden;
+    background: #f3f4f6;
+    margin: 0 auto 1.25rem auto;
+}
+
+.abt-team-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.abt-team-card h3 {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 0.25rem 0;
+}
+
+.abt-team-card > p {
+    font-size: clamp(0.9rem, 2vw, 1.05rem);
+    color: #6b7280;
+    margin: 0 0 1.25rem 0;
+}
+
+.abt-team-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.abt-team-btn {
+    background: #e5e7eb;
+    border: none;
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-weight: 500;
+}
+
+.abt-team-btn:hover {
+    background: #d1d5db;
+}
+
+.abt-team-dots {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.abt-team-dot {
+    width: clamp(10px, 2vw, 14px);
+    height: clamp(10px, 2vw, 14px);
+    border-radius: 50%;
+    background: #d1d5db;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    padding: 0;
+}
+
+.abt-team-dot.active {
+    background: #2563eb;
+}
+
+/* Founder */
+.abt-founder-section {
+    padding: clamp(3rem, 8vw, 5rem) 0;
+    background: white;
+}
+
+.abt-founder-content {
+    max-width: 850px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.abt-founder-content p {
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+    color: #374151;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.abt-founder-thanks {
+    font-weight: 600;
+    margin-top: 0.5rem !important;
+}
+
+.abt-founder-sig {
+    font-size: clamp(0.85rem, 1.8vw, 0.95rem) !important;
+    color: #6b7280 !important;
+}
+
+/* CTA */
+.abt-cta {
+    background: linear-gradient(90deg, #2563eb 0%, #14b8a6 100%);
+    color: white;
+    padding: clamp(3rem, 8vw, 5rem) 0;
+}
+
+.abt-cta-inner {
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.abt-cta h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.abt-cta p {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: #bfdbfe;
+    margin-bottom: 2rem;
+}
+
+.abt-cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Responsive - Tablet */
+@media (max-width: 900px) {
+    .abt-hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .abt-stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .abt-mission-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .abt-values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .abt-timeline-line {
+        display: none;
+    }
+
+    .abt-timeline-item,
+    .abt-timeline-item--left,
+    .abt-timeline-item--right {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .abt-timeline-item--left .abt-timeline-card,
+    .abt-timeline-item--right .abt-timeline-card {
+        width: 100%;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+    }
+
+    .abt-timeline-dot {
+        position: static;
+        transform: none;
+        margin-bottom: 0.75rem;
+    }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 540px) {
+    .abt-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .abt-values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .abt-hero-buttons,
+    .abt-cta-buttons {
+        flex-direction: column;
+    }
+
+    .abt-btn-primary,
+    .abt-btn-outline {
+        justify-content: center;
+        text-align: center;
+    }
+}

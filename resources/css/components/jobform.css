@@ -1,0 +1,250 @@
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 80;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+
+    width: 35%;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #1f2937;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #6b7280;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: #1f2937;
+}
+
+.modal-form {
+    padding: 1rem;
+}
+
+.form-step {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.form-group {
+    display: flex;
+    padding-left: 1vh;
+    padding-right: 1vh;
+    flex-direction: column;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #374151;
+    font-size: 0.95rem;
+}
+
+.required {
+    color: #ef4444;
+}
+
+.form-input {
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+  
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #0ea5e9;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+.error {
+    color: #ef4444;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.checkbox-group input {
+    cursor: pointer;
+}
+
+.checkmark {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: white;
+    border: 2px solid #d1d5db;
+    border-radius: 4px;
+    position: relative;
+}
+
+input[type="checkbox"]:checked + .checkmark {
+    background: #0ea5e9;
+    border-color: #0ea5e9;
+}
+
+input[type="checkbox"]:checked + .checkmark::after {
+    content: "✓";
+    position: absolute;
+    top: -2px;
+    left: 3px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+.form-title{
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    padding:0px;
+    margin: 0px;
+}
+.modal-footer {
+    display: flex;
+    gap: 1rem;
+  
+   
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background: #0ea5e9;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #0284c7;
+}
+
+.btn-success {
+    background: #10b981;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #059669;
+}
+
+.btn-secondary {
+    background: #6b7280;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #4b5563;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.alert {
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+.alert-success {
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+@media (max-width: 640px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+
+    .modal-footer {
+        flex-direction: column-reverse;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

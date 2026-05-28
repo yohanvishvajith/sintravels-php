@@ -1,0 +1,117 @@
+.gallery {
+    padding: clamp(2rem, 5vw, 4rem) 0;
+    background-color: #f9fafb;
+}
+
+.gallery-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center;
+    position: relative;
+    overflow: visible;
+}
+
+.gallery-title {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    font-weight: bold;
+    margin-bottom: clamp(1.5rem, 3vw, 3rem);
+}
+
+.gallery-wrapper {
+    overflow: hidden;
+    width: 100%;
+    height: clamp(250px, 60vw, 500px);
+    background: white;
+    border-radius: 8px;
+    position: relative;
+}
+
+.gallery-slider {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.gallery-slider img {
+    flex: 0 0 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.gallery-controls {
+    position: absolute;
+    top: 50%;
+    left: -50px;
+    right: -50px;
+    width: calc(100% + 100px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.prev-btn,
+.next-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: clamp(0.6rem, 1.5vw, 1rem);
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    transition: background-color 0.2s ease;
+    pointer-events: auto;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.prev-btn {
+    margin-left: 0;
+}
+
+.next-btn {
+    margin-right: 0;
+}
+
+.gallery-dots {
+    text-align: center;
+    margin-top: clamp(1rem, 2vw, 1.5rem);
+}
+
+.dot {
+    display: inline-block;
+    width: clamp(8px, 1.5vw, 12px);
+    height: clamp(8px, 1.5vw, 12px);
+    background-color: #d1d5db;
+    border-radius: 50%;
+    margin: 0 clamp(3px, 1vw, 5px);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #2563eb;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 540px) {
+    .gallery-controls {
+        opacity: 0.8;
+    }
+
+    .prev-btn,
+    .next-btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+    }
+}

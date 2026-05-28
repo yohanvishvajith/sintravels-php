@@ -1,0 +1,62 @@
+.job-locations {
+    padding: 2rem 0;
+    background-color: #f9fafb;
+}
+
+.locations-container {
+    max-width:100%;
+    margin: 0 auto;
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.location-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    width: 300px;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.location-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.location-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.flag-icon {
+    width: 50px;
+    height: auto;
+    border-radius: 4px;
+}
+
+.job-count {
+    background-color: #e0e7ff;
+    color: #3730a3;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.location-body h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.location-body p {
+    color: #6b7280;
+}
