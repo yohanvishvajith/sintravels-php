@@ -26,7 +26,7 @@
                 <button class="tab-button" data-tab="visa">Visa Categories</button>
             </li>
             <li class="tab-item">
-                <button class="tab-button" data-tab="advanced">Advanced</button>
+                <button class="tab-button" data-tab="advanced">Users</button>
             </li>
         </ul>
     </div>
