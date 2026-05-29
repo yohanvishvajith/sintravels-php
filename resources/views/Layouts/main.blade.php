@@ -8,9 +8,14 @@
 
     <title>@yield('title', 'SIN Travels')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.0/dist/jsvectormap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.0/dist/jsvectormap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.0/dist/maps/world.js"></script>
+   <!-- Stylesheet -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap/dist/jsvectormap.min.css" />
+
+<!-- Core library -->
+<script src="https://cdn.jsdelivr.net/npm/jsvectormap"></script>
+
+<!-- World map (replace with your desired map) -->
+<script src="https://cdn.jsdelivr.net/npm/jsvectormap/dist/maps/world.js"></script>
     @stack('styles')
 </head>
 
