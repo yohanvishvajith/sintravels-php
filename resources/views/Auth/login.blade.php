@@ -3,7 +3,7 @@
 @push('styles')
 @vite(['resources/css/auth/register.css'])
 @endpush
-
+@section('title', 'Login - SIN Travels')
 @section('content')
 <div class="register-root">
     <div class="register-card">

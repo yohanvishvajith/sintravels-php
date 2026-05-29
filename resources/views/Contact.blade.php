@@ -3,7 +3,7 @@
 @push('styles')
 @vite(['resources/css/contact.css'])
 @endpush
-
+@section('title', 'Contact Us - SIN Travels')
 @section('content')
 
 {{-- Breadcrumb --}}

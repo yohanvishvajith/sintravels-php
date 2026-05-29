@@ -1,5 +1,5 @@
 @extends('Layouts.Auth')
-
+@section('title', 'Reset Password - SIN Travels')
 @push('styles')
 @vite(['resources/css/auth/register.css'])
 @endpush

@@ -1,5 +1,4 @@
 @extends('Layouts.Auth')
-
 @push('styles')
 @vite(['resources/css/auth/register.css'])
 @endpush

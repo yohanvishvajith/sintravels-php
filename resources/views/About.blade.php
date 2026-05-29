@@ -1,5 +1,5 @@
 @extends('Layouts.main')
-@section('title', 'About Us - SiN Travels')
+@section('title', 'About Us - SIN Travels')
 @push('styles')
 @vite(['resources/css/about.css'])
 @endpush

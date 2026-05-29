@@ -1,5 +1,5 @@
 @extends('Layouts.main')
-@section('title', 'Our Services - SiN Travels')
+@section('title', 'Our Services - SIN Travels')
 
 @section('content')
 

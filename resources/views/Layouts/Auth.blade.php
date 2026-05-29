@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', 'SiN Travels - Auth')</title>
+    <title>@yield('title', 'SIN Travels - Auth')</title>
     @vite(['resources/css/auth/auth.css', 'resources/js/app.js'])
     @stack('styles')
 </head>
@@ -16,7 +16,7 @@
         <!-- Branding / Logo Section -->
         <div class="mb-8 text-center">
             <a href="" class="inline-block">
-                <h1 class="text-3xl font-bold text-gray-900">SiN Travels</h1>
+                <h1 class="text-3xl font-bold text-gray-900">SIN Travels</h1>
                 <p class="text-gray-600 mt-1">Manpower Solutions</p>
             </a>
         </div>
