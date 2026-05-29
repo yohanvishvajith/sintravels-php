@@ -6,12 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\Country;
 use App\Models\Industry;
 use App\Models\Job;
-<<<<<<< HEAD
-use Illuminate\Http\Request;
-=======
 use App\Models\JobView;
 use Illuminate\Support\Facades\DB;
->>>>>>> 9e4a6fe (modified)
+use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
@@ -115,12 +112,8 @@ class AdminController extends Controller
             'totalIndustries' => $totalIndustries,
             'jobViewsThisMonth' => $jobViewsThisMonth ?? 0,
             'jobViewsToday' => $jobViewsToday ?? 0,
-<<<<<<< HEAD
-            'jobViews' => $jobViews,
-=======
             'jobViewsChart' => $jobViewsChart,
             'jobViewsChartDates' => $allDates,
->>>>>>> 9e4a6fe (modified)
         ]);
     }
 

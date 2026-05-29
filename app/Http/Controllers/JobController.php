@@ -51,11 +51,6 @@ class JobController extends Controller
             return response()->json(['error' => 'Job not found'], 404);
         }
 
-<<<<<<< HEAD
-        $job->increment('view_count');
-
-        return response()->json(['view_count' => $job->view_count, 'success' => true], 200);
-=======
         // Log the view
         JobView::create([
             'job_id' => $jobId,
@@ -66,6 +61,5 @@ class JobController extends Controller
         $viewCount = $job->views()->count();
 
         return response()->json(['view_count' => $viewCount, 'success' => true], 200);
->>>>>>> 9e4a6fe (modified)
     }
 }
