@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Job;
+use App\Models\JobView;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
@@ -18,6 +19,14 @@ new class extends Component
         $this->jobId = $jobId;
         $this->selectedJob = Job::with('jobBenefits.benefit', 'countryData')->find($jobId);
         $this->isModalOpen = true;
+        
+        // Log the view
+        if ($this->selectedJob) {
+            JobView::create([
+                'job_id' => $jobId,
+                'created_at' => now(),
+            ]);
+        }
     }
 
     public function closeModal(): void

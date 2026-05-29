@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Job;
+use App\Models\JobView;
 use Illuminate\Http\Request;
 
 class JobController extends Controller
@@ -50,8 +51,21 @@ class JobController extends Controller
             return response()->json(['error' => 'Job not found'], 404);
         }
 
+<<<<<<< HEAD
         $job->increment('view_count');
 
         return response()->json(['view_count' => $job->view_count, 'success' => true], 200);
+=======
+        // Log the view
+        JobView::create([
+            'job_id' => $jobId,
+            'created_at' => now(),
+        ]);
+
+        // Get current view count
+        $viewCount = $job->views()->count();
+
+        return response()->json(['view_count' => $viewCount, 'success' => true], 200);
+>>>>>>> 9e4a6fe (modified)
     }
 }

@@ -68,7 +68,85 @@
 
 @push('scripts')
 <script>
-    window.jobViewsData = @json($jobViews);
+    window.jobViewsChart = @json($jobViewsChart);
+    window.jobViewsChartDates = @json($jobViewsChartDates);
+
+    document.addEventListener('DOMContentLoaded', function() {
+        if (!window.jobViewsChart || window.jobViewsChart.length === 0) {
+            console.log('No job views data available');
+            return;
+        }
+
+        const ctx = document.getElementById('jobViewsChart');
+        if (!ctx) return;
+
+        // Build datasets for each job
+        const datasets = window.jobViewsChart.map(job => ({
+            label: job.label,
+            data: job.data,
+            borderColor: job.borderColor,
+            backgroundColor: job.backgroundColor,
+            borderWidth: 3,
+            fill: true,
+            tension: 0.4,
+            pointRadius: 4,
+            pointBackgroundColor: job.borderColor,
+            pointBorderColor: '#fff',
+            pointBorderWidth: 2,
+            pointHoverRadius: 6,
+        }));
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: window.jobViewsChartDates,
+                datasets: datasets
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        labels: {
+                            usePointStyle: true,
+                            padding: 15,
+                            font: {
+                                size: 12,
+                            }
+                        }
+                    },
+                    title: {
+                        display: false,
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1,
+                        },
+                        grid: {
+                            display: true,
+                            drawBorder: true,
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: {
+                                size: 11,
+                            }
+                        }
+                    }
+                },
+                interaction: {
+                    intersect: false,
+                    mode: 'index',
+                },
+            }
+        });
+    });
 </script>
 @endpush
 

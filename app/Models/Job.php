@@ -41,7 +41,6 @@ class Job extends Model
         'description',
         'requirements',
         'applicants_count',
-        'view_count',
         'closing_date',
         'user_id',
     ];
@@ -99,5 +98,21 @@ class Job extends Model
     public function jobBenefits(): HasMany
     {
         return $this->hasMany(JobBenefit::class);
+    }
+
+    /**
+     * Get all views for this job
+     */
+    public function views(): HasMany
+    {
+        return $this->hasMany(JobView::class, 'job_id', 'id');
+    }
+
+    /**
+     * Get total view count for this job
+     */
+    public function getViewCountAttribute(): int
+    {
+        return $this->views()->count();
     }
 }
