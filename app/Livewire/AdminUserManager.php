@@ -111,7 +111,7 @@ class AdminUserManager extends Component
                 $data['password'] = Hash::make($this->password);
             }
             $user->update($data);
-            session()->flash('success', 'User updated successfully!');
+            $this->dispatch('toast', type: 'success', message: 'User updated successfully!', position: 'bottom-right');
         } else {
             $this->validate([
                 'password' => 'required|string|min:8',
@@ -124,7 +124,7 @@ class AdminUserManager extends Component
                 'password' => Hash::make($this->password),
                 'address' => $this->address,
             ]);
-            session()->flash('success', 'User created successfully!');
+            $this->dispatch('toast', type: 'success', message: 'User created successfully!', position: 'bottom-right');
         }
 
         $this->closeModal();
@@ -132,15 +132,37 @@ class AdminUserManager extends Component
 
     public function delete(User $user): void
     {
+        if (User::count() <= 1) {
+            $this->dispatch('toast', type: 'error', message: 'Cannot delete the only user account in the system.', position: 'bottom-right');
+            return;
+        }
+
         $this->deleteId = $user->id;
         $this->showDeleteConfirm = true;
     }
 
     public function confirmDelete(): void
     {
+        if (User::count() <= 1) {
+            $this->cancelDelete();
+            $this->dispatch('toast', type: 'error', message: 'Cannot delete the only user account in the system.', position: 'bottom-right');
+            return;
+        }
+
+        $this->validate([
+            'currentPassword' => 'required|string',
+        ], [
+            'currentPassword.required' => 'Your password is required to delete a user',
+        ]);
+
+        if (! Hash::check($this->currentPassword, auth()->user()->password)) {
+            $this->addError('currentPassword', 'Password is incorrect');
+            return;
+        }
+
         if ($this->deleteId) {
             User::destroy($this->deleteId);
-            session()->flash('success', 'User deleted successfully!');
+            $this->dispatch('toast', type: 'success', message: 'User deleted successfully!', position: 'bottom-right');
         }
         $this->cancelDelete();
     }
@@ -149,6 +171,7 @@ class AdminUserManager extends Component
     {
         $this->showDeleteConfirm = false;
         $this->deleteId = null;
+        $this->currentPassword = '';
     }
 
     public function openChangePasswordModal(User $user): void
@@ -194,7 +217,7 @@ class AdminUserManager extends Component
         }
 
         $user->update(['password' => Hash::make($this->newPassword)]);
-        session()->flash('success', 'Password changed successfully!');
+        $this->dispatch('toast', type: 'success', message: 'Password changed successfully!', position: 'bottom-right');
         $this->closeChangePasswordModal();
     }
 

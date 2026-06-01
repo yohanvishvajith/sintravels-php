@@ -69,14 +69,17 @@ class AdminCurrencyManager extends Component
                 'name' => $this->name,
                 'symbol' => $this->symbol,
             ]);
+            $message = 'Currency updated successfully!';
         } else {
             Currency::create([
                 'code' => $this->code,
                 'name' => $this->name,
                 'symbol' => $this->symbol,
             ]);
+            $message = 'Currency created successfully!';
         }
 
+        $this->dispatch('toast', type: 'success', message: $message, position: 'bottom-right');
         $this->resetForm();
         $this->showModal = false;
     }
@@ -92,6 +95,7 @@ class AdminCurrencyManager extends Component
     {
         if ($this->deletingId) {
             Currency::find($this->deletingId)->delete();
+            $this->dispatch('toast', type: 'success', message: 'Currency deleted successfully!', position: 'bottom-right');
             $this->showDeleteModal = false;
             $this->deletingId = null;
             $this->deletingName = null;

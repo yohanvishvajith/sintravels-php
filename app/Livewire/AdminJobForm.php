@@ -170,8 +170,10 @@ class AdminJobForm extends Component
             'jobType' => 'required|string',
             'country' => 'required|string',
             'industry' => 'required|string',
-            'closingDate' => 'required|date',
+            'closingDate' => 'required|date|after_or_equal:today',
             'vacancies' => 'required|integer|min:1',
+        ], [
+            'closingDate.after_or_equal' => 'The closing date must be today or later.',
         ]);
     }
 
@@ -200,7 +202,7 @@ class AdminJobForm extends Component
             'jobType' => 'required|string',
             'country' => 'required|string',
             'industry' => 'required|string',
-            'closingDate' => 'required|date',
+            'closingDate' => 'required|date|after_or_equal:today',
             'vacancies' => 'required|integer|min:1',
             'holidays' => 'required|string',
             'workingHours' => 'required|string',
@@ -213,6 +215,8 @@ class AdminJobForm extends Component
             'currency' => 'required|string',
             'salaryMin' => 'required|integer|min:0',
             'salaryMax' => 'nullable|integer|min:0',
+        ], [
+            'closingDate.after_or_equal' => 'The closing date must be today or later.',
         ]);
 
         DB::transaction(function () {
@@ -260,7 +264,9 @@ class AdminJobForm extends Component
             }
         });
 
-        session()->flash('success', $this->jobId ? 'Job updated successfully!' : 'Job created successfully!');
+        $message = $this->jobId ? 'Job updated successfully!' : 'Job created successfully!';
+        session()->flash('success', $message);
+        $this->dispatch('toast', type: 'success', message: $message, position: 'top-right');
         $this->closeModal();
         $this->dispatch('job-created');
     }

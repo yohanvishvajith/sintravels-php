@@ -11,25 +11,25 @@
     @stack('styles')
 </head>
 
-<body class="bg-gray-50">
-    <div class="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
-        <!-- Branding / Logo Section -->
-        <div class="mb-8 text-center">
-            <a href="" class="inline-block">
-                <h1 class="text-3xl font-bold text-gray-900">SIN Travels</h1>
-                <p class="text-gray-600 mt-1">Manpower Solutions</p>
-            </a>
-        </div>
+<body>
+    <div class="container">
+        <!-- Auth Header -->
+        <header class="auth-header">
+            <div class="header-content">
+                <h1 class="header-title">SIN Travels & Manpower</h1>
+          
+            </div>
+        </header>
 
         <!-- Auth Card Container -->
-        <div class="w-full max-w-md bg-white rounded-lg shadow-md p-8">
+        <div class="auth-card">
             @yield('content')
         </div>
 
      
     </div>
 
-    <!-- WhatsApp Floating Button -->
+
 
 
     <!-- Scripts -->

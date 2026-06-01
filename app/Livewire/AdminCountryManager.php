@@ -90,13 +90,16 @@ class AdminCountryManager extends Component
             }
 
             $country->update($updateData);
+            $message = 'Country updated successfully!';
         } else {
             Country::create([
                 'name' => $this->name,
                 'flagimg' => $flagPath ? '/storage/' . $flagPath : null,
             ]);
+            $message = 'Country created successfully!';
         }
 
+        $this->dispatch('toast', type: 'success', message: $message, position: 'bottom-right');
         $this->resetForm();
         $this->showModal = false;
     }
@@ -117,6 +120,7 @@ class AdminCountryManager extends Component
     {
         if ($this->deletingId) {
             Country::find($this->deletingId)->delete();
+            $this->dispatch('toast', type: 'success', message: 'Country deleted successfully!', position: 'bottom-right');
             $this->showDeleteModal = false;
             $this->deletingId = null;
             $this->deletingName = null;

@@ -53,10 +53,13 @@ class AdminVisaCategoryManager extends Component
         if ($this->editingId) {
             $visaCategory = VisaCategory::find($this->editingId);
             $visaCategory->update(['name' => $this->name]);
+            $message = 'Visa Category updated successfully!';
         } else {
             VisaCategory::create(['name' => $this->name]);
+            $message = 'Visa Category created successfully!';
         }
 
+        $this->dispatch('toast', type: 'success', message: $message, position: 'bottom-right');
         $this->resetForm();
         $this->showModal = false;
     }
@@ -72,6 +75,7 @@ class AdminVisaCategoryManager extends Component
     {
         if ($this->deletingId) {
             VisaCategory::find($this->deletingId)->delete();
+            $this->dispatch('toast', type: 'success', message: 'Visa Category deleted successfully!', position: 'bottom-right');
             $this->showDeleteModal = false;
             $this->deletingId = null;
             $this->deletingName = null;

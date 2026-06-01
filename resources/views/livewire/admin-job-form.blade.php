@@ -6,11 +6,7 @@
     </button>
     @endif
  
-    @if (session()->has('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-    @endif
+
 
     <div class="modal-overlay" @if ($showModal) style="display: flex;" @endif id="jobFormModal">
         <div class="modal-content">

@@ -53,10 +53,13 @@ class AdminIndustryManager extends Component
         if ($this->editingId) {
             $industry = Industry::find($this->editingId);
             $industry->update(['name' => $this->name]);
+            $message = 'Industry updated successfully!';
         } else {
             Industry::create(['name' => $this->name]);
+            $message = 'Industry created successfully!';
         }
 
+        $this->dispatch('toast', type: 'success', message: $message, position: 'bottom-right');
         $this->resetForm();
         $this->showModal = false;
     }
@@ -72,6 +75,7 @@ class AdminIndustryManager extends Component
     {
         if ($this->deletingId) {
             Industry::find($this->deletingId)->delete();
+            $this->dispatch('toast', type: 'success', message: 'Industry deleted successfully!', position: 'bottom-right');
             $this->showDeleteModal = false;
             $this->deletingId = null;
             $this->deletingName = null;

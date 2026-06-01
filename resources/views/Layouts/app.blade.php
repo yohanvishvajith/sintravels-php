@@ -15,5 +15,130 @@
         @yield('content')
 
         @livewireScripts
+        <script>
+            // Initialize toast listener
+            Livewire.on('toast', ({ type = 'success', message, position = 'top-right' }) => {
+                showToast(message, type, position);
+            });
+
+            function showToast(message, type = 'success', position = 'top-right') {
+                const toastContainer = document.getElementById('toast-container') || createToastContainer();
+                
+                const toast = document.createElement('div');
+                toast.className = `toast toast-${type}`;
+                toast.innerHTML = `
+                    <div class="toast-content">
+                        <i class="fas fa-${getIconByType(type)}"></i>
+                        <span>${message}</span>
+                    </div>
+                    <button class="toast-close" onclick="this.parentElement.remove()" type="button">
+                        <i class="fas fa-times"></i>
+                    </button>
+                `;
+                
+                toastContainer.appendChild(toast);
+                
+                // Trigger reflow to ensure animation plays
+                void toast.offsetWidth;
+                toast.classList.add('show');
+                
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                    setTimeout(() => toast.remove(), 300);
+                }, 3000);
+            }
+
+            function createToastContainer() {
+                const container = document.createElement('div');
+                container.id = 'toast-container';
+                container.className = 'toast-container';
+                document.body.appendChild(container);
+                return container;
+            }
+
+            function getIconByType(type) {
+                const icons = {
+                    'success': 'check-circle',
+                    'error': 'exclamation-circle',
+                    'warning': 'exclamation-triangle',
+                    'info': 'info-circle'
+                };
+                return icons[type] || 'bell';
+            }
+        </script>
+        <style>
+            .toast-container {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 9999;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                pointer-events: none;
+            }
+
+            .toast {
+                pointer-events: auto;
+                background: white;
+                border-left: 4px solid #10b981;
+                border-radius: 4px;
+                padding: 12px 16px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+                min-width: 300px;
+                opacity: 0;
+                transform: translateX(450px);
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            .toast.show {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            .toast-content {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: #1f2937;
+                font-size: 14px;
+            }
+
+            .toast-content i {
+                font-size: 18px;
+                flex-shrink: 0;
+            }
+
+            .toast-success { border-left-color: #10b981; }
+            .toast-success .toast-content i { color: #10b981; }
+
+            .toast-error { border-left-color: #ef4444; }
+            .toast-error .toast-content i { color: #ef4444; }
+
+            .toast-warning { border-left-color: #f59e0b; }
+            .toast-warning .toast-content i { color: #f59e0b; }
+
+            .toast-info { border-left-color: #3b82f6; }
+            .toast-info .toast-content i { color: #3b82f6; }
+
+            .toast-close {
+                background: none;
+                border: none;
+                cursor: pointer;
+                color: #9ca3af;
+                font-size: 14px;
+                padding: 0;
+                transition: color 0.2s;
+                flex-shrink: 0;
+            }
+
+            .toast-close:hover {
+                color: #1f2937;
+            }
+        </style>
     </body>
 </html>

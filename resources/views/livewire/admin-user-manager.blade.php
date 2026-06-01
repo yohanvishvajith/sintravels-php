@@ -117,9 +117,20 @@
             <h3 style="font-size: 1.125rem; font-weight: 600; color: #1f2937; margin-bottom: 1rem;">
                 Are you sure?
             </h3>
-            <p style="color: #6b7280; margin-bottom: 1.5rem;">
+            <p style="color: #6b7280; margin-bottom: 1rem;">
                 This action cannot be undone. The user will be permanently deleted.
             </p>
+
+            <div style="margin-bottom: 1.5rem;">
+                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: #374151;">Confirm with your password <span style="color: #ef4444;">*</span></label>
+                <div style="position: relative; display: flex; align-items: center;">
+                    <input type="{{ $showCurrentPassword ? 'text' : 'password' }}" wire:model="currentPassword" placeholder="Your current password" style="width: 100%; padding: 0.75rem; padding-right: 2.5rem; border: 1px solid #d1d5db; border-radius: 6px; font-size: 1rem; box-sizing: border-box;">
+                    <button type="button" wire:click="toggleCurrentPasswordVisibility" style="position: absolute; right: 0.75rem; background: none; border: none; cursor: pointer; color: #6b7280; font-size: 1.25rem;">
+                        <i class="fas fa-{{ $showCurrentPassword ? 'eye-slash' : 'eye' }}"></i>
+                    </button>
+                </div>
+                @error('currentPassword') <span style="color: #ef4444; font-size: 0.875rem;">{{ $message }}</span> @enderror
+            </div>
 
             <div style="display: flex; gap: 1rem; justify-content: flex-end;">
                 <button wire:click="cancelDelete" style="padding: 0.75rem 1.5rem; background: #e5e7eb; color: #374151; border: none; border-radius: 6px; cursor: pointer; font-weight: 500;">

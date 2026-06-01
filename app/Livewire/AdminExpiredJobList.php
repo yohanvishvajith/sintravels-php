@@ -82,7 +82,7 @@ class AdminExpiredJobList extends Component
         $this->confirmingDeleteId = null;
         $this->confirmingDeleteTitle = null;
         $this->previousViewingJobId = null;
-        session()->flash('success', 'Job deleted successfully.');
+        $this->dispatch('toast', type: 'success', message: 'Job deleted successfully.', position: 'bottom-right');
     }
 
     #[On('job-created')]

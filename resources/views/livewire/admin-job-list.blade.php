@@ -1,9 +1,5 @@
 <div>
-    @if (session()->has('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-    @endif
+   
 
     {{-- Delete Confirmation Modal --}}
     <div class="modal-overlay" @if ($confirmingDeleteId) style="display: flex;" @endif>

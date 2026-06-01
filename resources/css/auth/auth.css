@@ -1,0 +1,16 @@
+body{
+background-color: #f9fafb;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.container{
+
+align-items: center;
+justify-content: center;
+}
+.auth-header {
+    text-align: center;
+  
+}

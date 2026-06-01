@@ -53,10 +53,13 @@ class AdminBenefitManager extends Component
         if ($this->editingId) {
             $benefit = Benefit::find($this->editingId);
             $benefit->update(['name' => $this->name]);
+            $message = 'Benefit updated successfully!';
         } else {
             Benefit::create(['name' => $this->name]);
+            $message = 'Benefit created successfully!';
         }
 
+        $this->dispatch('toast', type: 'success', message: $message, position: 'bottom-right');
         $this->resetForm();
         $this->showModal = false;
     }
@@ -72,6 +75,7 @@ class AdminBenefitManager extends Component
     {
         if ($this->deletingId) {
             Benefit::find($this->deletingId)->delete();
+            $this->dispatch('toast', type: 'success', message: 'Benefit deleted successfully!', position: 'bottom-right');
             $this->showDeleteModal = false;
             $this->deletingId = null;
             $this->deletingName = null;
