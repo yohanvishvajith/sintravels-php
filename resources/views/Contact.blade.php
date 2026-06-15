@@ -120,8 +120,8 @@
                     <p>Fill out the form below and we'll get back to you within 24 hours</p>
                 </div>
                 <div class="cnt-card-body">
-                    <form class="cnt-form" method="POST" action="#">
-                        @csrf
+                    <form class="cnt-form" id="form">
+                        <input type="hidden" name="to_name" value="SIN Travels Admin">
                         <div class="cnt-form-row">
                             <div class="cnt-field">
                                 <label for="cnt-name">
@@ -131,7 +131,7 @@
                                     </svg>
                                     Full Name *
                                 </label>
-                                <input type="text" id="cnt-name" name="name" placeholder="Enter your full name" required>
+                                <input type="text" id="cnt-name" name="from_name" placeholder="Enter your full name" required>
                             </div>
                             <div class="cnt-field">
                                 <label for="cnt-email">
@@ -141,7 +141,7 @@
                                     </svg>
                                     Email Address *
                                 </label>
-                                <input type="email" id="cnt-email" name="email" placeholder="Enter your email" required>
+                                <input type="email" id="cnt-email" name="reply_to" placeholder="Enter your email" required>
                             </div>
                         </div>
                         <div class="cnt-form-row">
@@ -152,7 +152,7 @@
                                     </svg>
                                     Phone Number
                                 </label>
-                                <input type="text" id="cnt-phone" name="phone" placeholder="Enter your phone number">
+                                <input type="text" id="cnt-phone" name="mobile" placeholder="Enter your phone number">
                             </div>
                             <div class="cnt-field">
                                 <label for="cnt-company">
@@ -204,7 +204,7 @@
                             </label>
                             <textarea id="cnt-message" name="message" rows="5" placeholder="Tell us about your requirements..." required></textarea>
                         </div>
-                        <button type="submit" class="cnt-submit-btn">
+                        <button type="submit" class="cnt-submit-btn" id="button">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" />
                                 <path d="m21.854 2.147-10.94 10.939" />
@@ -272,3 +272,37 @@
 </section>
 
 @endsection
+
+@push('scripts')
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  emailjs.init('e5WgsuFrO_91waFQs')
+</script>
+
+<script type="text/javascript">
+const btn = document.getElementById('button');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   const originalText = btn.textContent;
+   btn.textContent = 'Sending...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_7n2puyj';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.textContent = originalText;
+      alert('Sent!');
+      document.getElementById('form').reset();
+    }, (err) => {
+      btn.textContent = originalText;
+      alert(JSON.stringify(err));
+    });
+});
+</script>
+@endpush

@@ -46,6 +46,15 @@ class AdminCountryManager extends Component
         $this->originalFlagimg = null;
     }
 
+    public function updatedFlagimg(): void
+    {
+        if ($this->flagimg && !is_string($this->flagimg)) {
+            $this->validate([
+                'flagimg' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ]);
+        }
+    }
+
     public function edit(Country $country): void
     {
         $this->editingId = $country->id;
@@ -64,7 +73,7 @@ class AdminCountryManager extends Component
 
         // Only add image validation if flagimg is actually a file upload
         if ($this->flagimg && !is_string($this->flagimg)) {
-            $rules['flagimg'] = 'image|mimes:jpeg,png,gif,svg|max:2048';
+            $rules['flagimg'] = 'image|mimes:jpeg,png,jpg,gif,svg|max:2048';
         }
 
         $this->validate($rules);

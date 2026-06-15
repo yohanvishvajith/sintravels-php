@@ -1,6 +1,8 @@
 <?php
 
 use App\Models\Job;
+use App\Models\Country;
+use App\Models\Industry;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -11,20 +13,64 @@ new class extends Component
     protected $paginationTheme = 'tailwind';
 
     public $perPage = 10;
+    public $search = '';
+    public $country = '';
+    public $industry = '';
 
     public function updatedPerPage()
     {
         $this->resetPage();
     }
 
+    public function updatedSearch()
+    {
+        $this->resetPage();
+    }
+
+    public function updatedCountry()
+    {
+        $this->resetPage();
+    }
+
+    public function updatedIndustry()
+    {
+        $this->resetPage();
+    }
+
+    public function resetFilters()
+    {
+        $this->reset(['search', 'country', 'industry']);
+        $this->resetPage();
+    }
+
     public function render()
     {
+        $query = Job::with('countryData')
+            ->where(function($q) {
+                $q->whereNull('closing_date')
+                  ->orWhereDate('closing_date', '>=', now());
+            });
+
+        if ($this->search) {
+            $query->where(function($q) {
+                $q->where('title', 'like', '%' . $this->search . '%')
+                  ->orWhere('company', 'like', '%' . $this->search . '%')
+                  ->orWhere('description', 'like', '%' . $this->search . '%');
+            });
+        }
+
+        if ($this->country) {
+            $query->where('country', $this->country);
+        }
+
+        if ($this->industry) {
+            $query->where('industry', $this->industry);
+        }
+
         return view('livewire.jobs', [
-            'jobs' => Job::with('countryData')
-                ->where(function($q) {
-                    $q->whereNull('closing_date')
-                      ->orWhereDate('closing_date', '>=', now());
-                })->paginate($this->perPage),
+            'jobs' => $query->latest()->paginate($this->perPage),
+            'countries' => Country::orderBy('name')->get(),
+            'industries' => Industry::orderBy('name')->get(),
         ]);
     }
 };
@@ -42,36 +88,33 @@ new class extends Component
                     <circle cx="11" cy="11" r="8" />
                     <path d="m21 21-4.3-4.3" />
                 </svg>
-                <input type="text" id="jb-search-input" placeholder="Search jobs, companies...">
+                <input type="text" wire:model.live.debounce.300ms="search" placeholder="Search jobs, companies...">
             </div>
             <div class="jb-search-field">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
                     <circle cx="12" cy="10" r="3" />
                 </svg>
-                <select id="jb-country-filter">
+                <select wire:model.live="country">
                     <option value="">All Countries</option>
-                    <option value="UAE">UAE / Dubai</option>
-                    <option value="Kuwait">Kuwait</option>
-                    <option value="Saudi Arabia">Saudi Arabia</option>
-                    <option value="Qatar">Qatar</option>
-                    <option value="Oman">Oman</option>
-                    <option value="Bahrain">Bahrain</option>
+                    @foreach($countries as $c)
+                        <option value="{{ $c->name }}">{{ $c->name }}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="jb-search-field">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10" />
-                    <polyline points="12 6 12 12 16 14" />
+                    <rect width="20" height="14" x="2" y="7" rx="2" ry="2" />
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                 </svg>
-                <select id="jb-type-filter">
-                    <option value="">All Job Types</option>
-                    <option value="Full-time">Full-time</option>
-                    <option value="Part-time">Part-time</option>
-                    <option value="Contract">Contract</option>
+                <select wire:model.live="industry">
+                    <option value="">All Categories</option>
+                    @foreach($industries as $i)
+                        <option value="{{ $i->name }}">{{ $i->name }}</option>
+                    @endforeach
                 </select>
             </div>
-            <button class="jb-search-btn" onclick="filterJobs()">
+            <button class="jb-search-btn" wire:click="$refresh">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M4 6h16M7 12h10M10 18h4" />
                 </svg>
@@ -99,7 +142,7 @@ new class extends Component
 
         <div class="jb-grid" id="jb-grid">
             @forelse($jobs as $job)
-            <div class="jb-card" data-country="{{ $job->country }}" data-type="{{ $job->type }}">
+            <div class="jb-card">
                 <div class="jb-card-header">
                     <div class="jb-card-flag">
                         <img src="{{ $job->countryData?->flagimg ? asset($job->countryData->flagimg) : 'https://flagcdn.com/un.svg' }}" alt="{{ $job->country }} flag">
@@ -150,7 +193,7 @@ new class extends Component
                 </svg>
                 <h3>No jobs found</h3>
                 <p>Try adjusting your search or filter criteria.</p>
-                <button onclick="resetFilters()">Clear Filters</button>
+                <button wire:click="resetFilters">Clear Filters</button>
             </div>
             @endforelse
         </div>

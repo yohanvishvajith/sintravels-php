@@ -38,10 +38,6 @@
         </ul>
     </nav>
     <div class="sidebar-footer">
-        <a href="#" class="sidebar-help">
-            <i class="fas fa-question-circle"></i>
-            <span>Help & Support</span>
-        </a>
         <form method="POST" action="{{ route('logout') }}" id="logout-form">
             @csrf
             <button type="submit" class="sidebar-logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

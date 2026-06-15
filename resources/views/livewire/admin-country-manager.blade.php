@@ -102,10 +102,13 @@
                             style="position: relative; z-index: 1; opacity: 0; cursor: pointer; height: 44px; width: 100%;">
                         <div style="position: absolute; top: 0; left: 0; right: 0; height: 44px; background: white; border: 1px solid #cbd5e0; border-radius: 4px; display: flex; align-items: center; padding: 0 0.75rem; pointer-events: none; color: #718096;">
                             <i class="fas fa-cloud-upload-alt" style="margin-right: 0.5rem;"></i>
-                            <span>{{ $flagimg ? 'Change image' : 'Choose image' }}</span>
+                            <span>{{ $flagimg && !is_string($flagimg) ? 'Change image' : 'Choose image' }}</span>
                         </div>
                     </div>
-                    @error('flagimg') <span class="error">{{ $message }}</span> @enderror
+                    <div wire:loading wire:target="flagimg" style="margin-top: 0.5rem; font-size: 0.85rem; color: #0ea5e9;">
+                        <i class="fas fa-spinner fa-spin"></i> Uploading flag...
+                    </div>
+                    @error('flagimg') <span class="error" style="display: block; margin-top: 0.5rem; color: #e53e3e; font-size: 0.875rem;">{{ $message }}</span> @enderror
                     @if ($flagimg)
                     <div style="margin-top: 0.75rem;">
                         <p style="font-size: 0.85rem; color: #718096; margin: 0 0 0.5rem;">Preview:</p>
@@ -113,7 +116,11 @@
                             @if (is_string($flagimg))
                             <img src="{{ $flagimg }}" alt="Flag preview" loading="lazy" style="width: 64px; height: 40px; border-radius: 4px; object-fit: cover; border: 1px solid #e2e8f0;">
                             @else
-                            <img src="{{ $flagimg->temporaryUrl() }}" alt="Flag preview" loading="lazy" style="width: 64px; height: 40px; border-radius: 4px; object-fit: cover; border: 1px solid #e2e8f0;">
+                                @if (method_exists($flagimg, 'temporaryUrl') && str_starts_with($flagimg->getMimeType(), 'image/'))
+                                    <img src="{{ $flagimg->temporaryUrl() }}" alt="Flag preview" loading="lazy" style="width: 64px; height: 40px; border-radius: 4px; object-fit: cover; border: 1px solid #e2e8f0;">
+                                @else
+                                    <div style="width: 64px; height: 40px; background: #f7fafc; border: 1px solid #e2e8f0; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #a0aec0; font-size: 0.75rem;">Invalid</div>
+                                @endif
                             @endif
                             <button type="button" wire:click="clearImage" style="background: #fed7d7; color: #c53030; border: 1px solid #fc8181; padding: 0.4rem 0.7rem; border-radius: 4px; cursor: pointer; font-size: 0.85rem;">
                                 <i class="fas fa-trash"></i> Clear
