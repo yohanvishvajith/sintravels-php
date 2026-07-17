@@ -45,6 +45,17 @@ new class extends Component
 ?>
 
 <div x-data="{ modalOpen: $wire.entangle('isModalOpen') }">
+    <div
+        wire:loading.flex
+        wire:target="openModal"
+        class="fixed inset-0 z-50 items-center justify-center bg-black/30 backdrop-blur-sm"
+    >
+        <div class="flex flex-col items-center gap-3 rounded-2xl bg-white px-6 py-5 shadow-xl">
+            <div class="h-10 w-10 animate-spin rounded-full border-4 border-gray-200 border-t-blue-600"></div>
+            <p class="text-sm font-medium text-gray-600">Loading job details...</p>
+        </div>
+    </div>
+
     <!-- Modal -->
     <div
         x-show="modalOpen"

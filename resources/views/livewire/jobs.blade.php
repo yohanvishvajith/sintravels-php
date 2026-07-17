@@ -140,7 +140,7 @@ new class extends Component
             </div>
         </div>
 
-        <div class="jb-grid" id="jb-grid">
+        <div class="jb-grid" id="jb-grid" wire:loading.remove wire:target="search,country,industry,perPage,resetFilters,$refresh">
             @forelse($jobs as $job)
             <div class="jb-card">
                 <div class="jb-card-header">
@@ -196,6 +196,42 @@ new class extends Component
                 <button wire:click="resetFilters">Clear Filters</button>
             </div>
             @endforelse
+        </div>
+
+        <div class="jb-grid jb-grid-skeleton" wire:loading.grid wire:target="search,country,industry,perPage,resetFilters,$refresh" aria-live="polite" aria-busy="true">
+            @for ($i = 0; $i < 8; $i++)
+                <div class="jb-card jb-skeleton-card">
+                    <div class="jb-card-header">
+                        <div class="jb-card-flag jb-skeleton-block jb-skeleton-flag"></div>
+                        <div class="jb-skeleton-copy">
+                            <div class="jb-skeleton-line jb-skeleton-title"></div>
+                            <div class="jb-skeleton-line jb-skeleton-subtitle"></div>
+                        </div>
+                    </div>
+                    <div class="jb-card-body">
+                        <div class="jb-tags jb-skeleton-tags">
+                            <span class="jb-skeleton-pill"></span>
+                            <span class="jb-skeleton-pill"></span>
+                            <span class="jb-skeleton-pill"></span>
+                        </div>
+                        <div class="jb-details jb-skeleton-details">
+                            <div class="jb-skeleton-detail"><span class="jb-skeleton-dot"></span><span class="jb-skeleton-line"></span></div>
+                            <div class="jb-skeleton-detail"><span class="jb-skeleton-dot"></span><span class="jb-skeleton-line"></span></div>
+                            <div class="jb-skeleton-detail"><span class="jb-skeleton-dot"></span><span class="jb-skeleton-line"></span></div>
+                            <div class="jb-skeleton-detail"><span class="jb-skeleton-dot"></span><span class="jb-skeleton-line"></span></div>
+                            <div class="jb-skeleton-detail jb-detail-full"><span class="jb-skeleton-dot"></span><span class="jb-skeleton-line"></span></div>
+                        </div>
+                    </div>
+                    <div class="jb-card-actions jb-skeleton-actions">
+                        <span class="jb-skeleton-button"></span>
+                        <span class="jb-skeleton-button"></span>
+                    </div>
+                    <div class="jb-card-footer jb-skeleton-footer">
+                        <span class="jb-skeleton-line"></span>
+                        <span class="jb-skeleton-line"></span>
+                    </div>
+                </div>
+            @endfor
         </div>
 
         {{-- Pagination --}}

@@ -181,6 +181,128 @@
     grid-template-columns: repeat(4, 1fr);
     gap: clamp(1rem, 2vw, 1.25rem);
 }
+.jb-grid-skeleton {
+    width: 100%;
+}
+
+.jb-skeleton-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.jb-skeleton-card::after,
+.jb-skeleton-block::after,
+.jb-skeleton-line::after,
+.jb-skeleton-pill::after,
+.jb-skeleton-button::after,
+.jb-skeleton-dot::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+    animation: jb-shimmer 1.4s infinite;
+}
+
+.jb-skeleton-block,
+.jb-skeleton-line,
+.jb-skeleton-pill,
+.jb-skeleton-button,
+.jb-skeleton-dot {
+    position: relative;
+    overflow: hidden;
+    background: #e5e7eb;
+}
+
+.jb-skeleton-copy {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.jb-skeleton-flag {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+}
+
+.jb-skeleton-title {
+    width: 68%;
+    height: 0.95rem;
+    border-radius: 9999px;
+}
+
+.jb-skeleton-subtitle {
+    width: 42%;
+    height: 0.7rem;
+    border-radius: 9999px;
+    opacity: 0.85;
+}
+
+.jb-skeleton-tags {
+    margin-bottom: 0.85rem;
+}
+
+.jb-skeleton-pill {
+    height: 1.4rem;
+    min-width: 5rem;
+    border-radius: 9999px;
+}
+
+.jb-skeleton-details {
+    gap: 0.8rem;
+}
+
+.jb-skeleton-detail {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.jb-skeleton-dot {
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 9999px;
+    flex-shrink: 0;
+}
+
+.jb-skeleton-detail .jb-skeleton-line {
+    flex: 1;
+    height: 0.75rem;
+    border-radius: 9999px;
+}
+
+.jb-skeleton-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.jb-skeleton-button {
+    height: 2.5rem;
+    flex: 1;
+    border-radius: 0.5rem;
+}
+
+.jb-skeleton-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.jb-skeleton-footer .jb-skeleton-line {
+    height: 0.7rem;
+    border-radius: 9999px;
+    width: 42%;
+}
+
+@keyframes jb-shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}
 
 /* ---- Card ---- */
 .jb-card {

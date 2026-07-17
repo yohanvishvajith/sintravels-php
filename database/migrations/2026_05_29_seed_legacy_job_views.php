@@ -16,6 +16,10 @@ return new class extends Migration
         $viewCount = 3;
         $createdAt = now();
 
+        if (! DB::table('job_listings')->where('id', $jobId)->exists()) {
+            return;
+        }
+
         for ($i = 0; $i < $viewCount; $i++) {
             DB::table('job_views')->insert([
                 'job_id' => $jobId,

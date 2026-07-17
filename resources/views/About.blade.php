@@ -281,7 +281,7 @@
             },
             {
                 name: 'Team Member',
-                role: 'Manager',
+                role: 'Director (licensye)',
                 img: '/images/team/team2.jpg'
             },
             {
@@ -290,14 +290,14 @@
                 img: '/images/team/team3.jpg'
             },
             {
-                name: 'Team Member',
-                role: 'Visa Consultant',
+                name: 'Ms. rivisarani ',
+                role: 'Content creator',
                 img: '/images/team/team4.jpg'
             },
             {
-                name: 'Ms. Swetha Abesinghe',
-                role: 'Marketing',
-                img: '/images/team/team5.jpg'
+                name: 'Ms. kmari',
+                role: 'HR Manager',
+                img: '/images/team/team9.jpg'
             },
             {
                 name: 'Team Member',

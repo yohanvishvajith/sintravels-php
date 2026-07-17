@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('job_listings', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->string('title');
-            $table->string('company');
+            $table->string('company');      
             $table->string('location');
             $table->string('country');
             $table->integer('salary_min');
@@ -35,6 +35,8 @@ return new class extends Migration
             $table->json('requirements');
             $table->integer('applicants_count')->default(0);
             $table->dateTime('closing_date');
+                      $table->foreignId('user_id')->nullable()->constrained('users')->cascadeOnDelete();
+      
             $table->timestamps();
         });
     }

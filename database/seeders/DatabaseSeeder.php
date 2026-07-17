@@ -21,5 +21,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+        // Seed jobs after ensuring related foreign data exists
+        $this->call(JobSeeder::class);
     }
 }

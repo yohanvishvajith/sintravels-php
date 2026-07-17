@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Job;
 use App\Models\JobView;
 use Illuminate\Database\Seeder;
 
@@ -24,6 +25,10 @@ class JobViewsSeeder extends Seeder
             $date = now()->subDays($days);
 
             foreach ($jobIds as $jobId) {
+                if (! Job::whereKey($jobId)->exists()) {
+                    continue;
+                }
+
                 // Random number of views per job per day (0-8)
                 $viewsCount = rand(0, 8);
 

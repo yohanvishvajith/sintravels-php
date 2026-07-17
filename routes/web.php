@@ -50,3 +50,6 @@ Route::get('lang/{locale}', function ($locale) {
 
     return redirect()->back();
 });
+
+
+Route::view('/testing', 'testing')->name('testing');
