@@ -3,7 +3,7 @@
     <div class="nav-left">
         <!-- Mobile hamburger button (left corner) -->
         <button id="nav-hamburger" class="nav-hamburger" aria-label="Open navigation">
-            <i class="fas fa-bars"></i>
+            <i class="fa-solid fa-bars"></i>
         </button>
 
         <div class="brand">

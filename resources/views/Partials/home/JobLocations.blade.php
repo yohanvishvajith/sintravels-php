@@ -4,17 +4,17 @@
             <div class="location-card">
                 <div class="location-header">
                     <img src="{{ asset($country['flagimg']) }}" loading="lazy" alt="{{ $country['name'] }} Flag" class="flag-icon">
-                    <span class="job-count">{{ $country['job_count'] }} {{ $country['job_count'] === 1 ? 'job' : 'jobs' }}</span>
+                    <span class="job-count">{{ $country['job_count'] }} {{ $country['job_count'] === 1 ? __('home.job_locations.job') : __('home.job_locations.jobs') }}</span>
                 </div>
                 <div class="location-body">
                     <h3>{{ $country['name'] }}</h3>
-                    <p>Active opportunities</p>
+                    <p>{{ __('home.job_locations.active_opportunities') }}</p>
                 </div>
             </div>
         @empty
             <div class="location-card">
                 <div class="location-body">
-                    <p>No active job locations at the moment.</p>
+                    <p>{{ __('home.job_locations.empty_state') }}</p>
                 </div>
             </div>
         @endforelse

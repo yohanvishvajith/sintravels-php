@@ -1,5 +1,5 @@
 @extends('Layouts.main')
-@section('title', 'About Us - SIN Travels')
+@section('title', __('about.page_title'))
 @push('styles')
 @vite(['resources/css/about.css'])
 @endpush
@@ -7,31 +7,31 @@
 
 {{-- Breadcrumb --}}
 <x-page-breadcrumb
-    page="About Us"
-    title="About Us"
-    subtitle="Your trusted partner in international recruitment and career development" />
+    page="{{ __('about.breadcrumb.page') }}"
+    title="{{ __('about.breadcrumb.title') }}"
+    subtitle="{{ __('about.breadcrumb.subtitle') }}" />
 
 {{-- Hero --}}
 <section class="abt-hero">
     <div class="abt-container">
         <div class="abt-hero-grid">
             <div class="abt-hero-text">
-                <h2>Connecting Talent with Global Opportunities</h2>
-                <p>Our journey is marked by a relentless pursuit of global outreach. With strategic office in Kochchikade, Negambo, we have established a strong international presence. Expanding our horizons further, we are on the verge of opening new offices in Dubai, Oman, reinforcing our commitment to connecting talent with opportunities on a global scale.</p>
-                <p>Our founder, P. C. Gayan Fernando, is an innovative and forward-thinking businessman, constantly exploring new avenues to elevate our industry. His vision goes beyond business success; it encompasses the prosperity of young lives in Sri Lanka. We aim to achieve this by providing them with not just jobs but meaningful careers that contribute to personal and professional growth.</p>
+                <h2>{{ __('about.hero.title') }}</h2>
+                <p>{{ __('about.hero.description_one') }}</p>
+                <p>{{ __('about.hero.description_two') }}</p>
                 <div class="abt-hero-buttons">
                     <a href="/contact" class="abt-btn-primary">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                         </svg>
-                        Get In Touch
+                        {{ __('about.hero.buttons.contact') }}
                     </a>
                     <a href="/services" class="abt-btn-outline">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
                             <rect width="20" height="14" x="2" y="6" rx="2"></rect>
                         </svg>
-                        Our Services
+                        {{ __('about.hero.buttons.services') }}
                     </a>
                 </div>
             </div>
@@ -43,8 +43,8 @@
                         <rect width="18" height="18" x="3" y="4" rx="2"></rect>
                         <path d="M3 10h18"></path>
                     </svg>
-                    <div class="abt-stat-number">5+</div>
-                    <div class="abt-stat-label">Years of Experience</div>
+                    <div class="abt-stat-number">{{ __('about.stats.0.number') }}</div>
+                    <div class="abt-stat-label">{{ __('about.stats.0.label') }}</div>
                 </div>
                 <div class="abt-stat-card">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -52,8 +52,8 @@
                         <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
                         <path d="M2 12h20"></path>
                     </svg>
-                    <div class="abt-stat-number">6+</div>
-                    <div class="abt-stat-label">Partner Countries</div>
+                    <div class="abt-stat-number">{{ __('about.stats.1.number') }}</div>
+                    <div class="abt-stat-label">{{ __('about.stats.1.label') }}</div>
                 </div>
                 <div class="abt-stat-card">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -62,16 +62,16 @@
                         <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
                         <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                     </svg>
-                    <div class="abt-stat-number">700+</div>
-                    <div class="abt-stat-label">Successful Placements</div>
+                    <div class="abt-stat-number">{{ __('about.stats.2.number') }}</div>
+                    <div class="abt-stat-label">{{ __('about.stats.2.label') }}</div>
                 </div>
                 <div class="abt-stat-card">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
                         <polyline points="16 7 22 7 22 13"></polyline>
                     </svg>
-                    <div class="abt-stat-number">98%</div>
-                    <div class="abt-stat-label">Client Satisfaction</div>
+                    <div class="abt-stat-number">{{ __('about.stats.3.number') }}</div>
+                    <div class="abt-stat-label">{{ __('about.stats.3.label') }}</div>
                 </div>
             </div>
         </div>
@@ -82,7 +82,7 @@
 <section class="abt-mission-section">
     <div class="abt-container">
         <div class="abt-section-header">
-            <h2>Our Mission, Vision &amp; Values</h2>
+            <h2>{{ __('about.mission_vision.title') }}</h2>
         </div>
         <div class="abt-mission-grid">
             <div class="abt-mission-card abt-mission-card--blue">
@@ -92,9 +92,9 @@
                         <circle cx="12" cy="12" r="6"></circle>
                         <circle cx="12" cy="12" r="2"></circle>
                     </svg>
-                    <h3>Our Mission</h3>
+                    <h3>{{ __('about.mission_vision.mission.title') }}</h3>
                 </div>
-                <p>To bridge the gap between talent and opportunity by providing world-class recruitment services that transform careers and businesses globally. We are committed to excellence, integrity, and creating lasting value for all stakeholders in the recruitment ecosystem.</p>
+                <p>{{ __('about.mission_vision.mission.description') }}</p>
             </div>
             <div class="abt-mission-card abt-mission-card--teal">
                 <div class="abt-mission-card-header">
@@ -103,9 +103,9 @@
                         <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
                         <path d="M2 12h20"></path>
                     </svg>
-                    <h3>Our Vision</h3>
+                    <h3>{{ __('about.mission_vision.vision.title') }}</h3>
                 </div>
-                <p>To be the leading international manpower solution provider, recognized for our excellence, innovation, and commitment to client success. We envision a world where geographical boundaries don't limit career aspirations and business growth.</p>
+                <p>{{ __('about.mission_vision.vision.description') }}</p>
             </div>
         </div>
     </div>
@@ -115,7 +115,7 @@
 <section class="abt-values-section">
     <div class="abt-container">
         <div class="abt-section-header">
-            <h2>Our Core Values</h2>
+            <h2>{{ __('about.values.title') }}</h2>
         </div>
         <div class="abt-values-grid">
             @php
@@ -158,8 +158,8 @@
                 <div class="abt-value-icon abt-value-icon--{{ $value['icon'] }}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{!! $svgs[$value['icon']] !!}</svg>
                 </div>
-                <h3>{{ $value['title'] }}</h3>
-                <p>{{ $value['desc'] }}</p>
+                <h3>{{ __('about.values.items.' . $loop->index . '.title') }}</h3>
+                <p>{{ __('about.values.items.' . $loop->index . '.description') }}</p>
             </div>
             @endforeach
         </div>
@@ -170,17 +170,17 @@
 <section class="abt-journey-section">
     <div class="abt-container">
         <div class="abt-section-header">
-            <h2>Our Journey</h2>
-            <p>Key milestones in our growth and evolution</p>
+            <h2>{{ __('about.journey.title') }}</h2>
+            <p>{{ __('about.journey.subtitle') }}</p>
         </div>
         <div class="abt-timeline">
             <div class="abt-timeline-line"></div>
 
             <div class="abt-timeline-item abt-timeline-item--left">
                 <div class="abt-timeline-card">
-                    <span class="abt-timeline-year">2021</span>
-                    <h3>Launched Air Ticketing &amp; Tourist Visa Services</h3>
-                    <p>We launched air ticketing and tourist visa services and expanded partnerships across countries.</p>
+                    <span class="abt-timeline-year">{{ __('about.journey.items.0.year') }}</span>
+                    <h3>{{ __('about.journey.items.0.title') }}</h3>
+                    <p>{{ __('about.journey.items.0.description') }}</p>
                 </div>
                 <div class="abt-timeline-dot"></div>
             </div>
@@ -188,17 +188,17 @@
             <div class="abt-timeline-item abt-timeline-item--right">
                 <div class="abt-timeline-dot"></div>
                 <div class="abt-timeline-card">
-                    <span class="abt-timeline-year">2023</span>
-                    <h3>Registered with the Sri Lanka Bureau of Foreign Employment</h3>
-                    <p>The company was officially registered with the Sri Lanka Bureau of Foreign Employment (SLBFE).</p>
+                    <span class="abt-timeline-year">{{ __('about.journey.items.1.year') }}</span>
+                    <h3>{{ __('about.journey.items.1.title') }}</h3>
+                    <p>{{ __('about.journey.items.1.description') }}</p>
                 </div>
             </div>
 
             <div class="abt-timeline-item abt-timeline-item--left">
                 <div class="abt-timeline-card">
-                    <span class="abt-timeline-year">2023</span>
-                    <h3>Changed to Sin Travels and Manpower</h3>
-                    <p>The business rebranded as Sin Travels and Manpower to reflect its expanded services and strategic direction under the new director.</p>
+                    <span class="abt-timeline-year">{{ __('about.journey.items.2.year') }}</span>
+                    <h3>{{ __('about.journey.items.2.title') }}</h3>
+                    <p>{{ __('about.journey.items.2.description') }}</p>
                 </div>
                 <div class="abt-timeline-dot"></div>
             </div>
@@ -210,8 +210,8 @@
 <section class="abt-team-section">
     <div class="abt-container">
         <div class="abt-section-header">
-            <h2>Our Team</h2>
-            <p>Meet the people behind SIN Travels &amp; Manpower</p>
+            <h2>{{ __('about.team.title') }}</h2>
+            <p>{{ __('about.team.subtitle') }}</p>
         </div>
         <div class="abt-team-slider-wrapper">
             <div class="abt-team-card" id="abt-team-card">
@@ -221,9 +221,9 @@
                 <h3 id="abt-team-name"></h3>
                 <p id="abt-team-role"></p>
                 <div class="abt-team-controls">
-                    <button class="abt-team-btn" id="abt-team-prev">Prev</button>
+                    <button class="abt-team-btn" id="abt-team-prev">{{ __('about.team.prev') }}</button>
                     <div class="abt-team-dots" id="abt-team-dots"></div>
-                    <button class="abt-team-btn" id="abt-team-next">Next</button>
+                    <button class="abt-team-btn" id="abt-team-next">{{ __('about.team.next') }}</button>
                 </div>
             </div>
         </div>
@@ -234,15 +234,14 @@
 <section class="abt-founder-section">
     <div class="abt-container">
         <div class="abt-section-header">
-            <h2>FOUNDER'S MESSAGE</h2>
+            <h2>{{ __('about.founder.title') }}</h2>
         </div>
         <div class="abt-founder-content">
-            <p>As the founder of the SIN Travels &amp; Manpower Agency, I take immense pride in the role our agency has playing in shaping the future of Sri Lankan's overseas employment. From our inception, our primary goal has been to safeguard the rights and welfare of our workforce while creating opportunities for growth and development across the global job market.</p>
-            <p>We recognize the immense contributions made by Sri Lankan workers abroad, not only in supporting their families but also in strengthening our national economy through remittances. Our mission, therefore, has always been to ensure that these individuals are well-prepared, well-protected, and equipped with the skills needed to thrive in foreign employment.</p>
-            <p>Over the years, we have established rigorous standards and built strong relationships with international recruitment agencies, ensuring fair and ethical treatment for our workforce. Our commitment extends beyond just providing job opportunities, we focus on comprehensive support, from pre-departure training to welfare services while working abroad and reintegration programs for those returning home.</p>
-            <p>As we look towards the future, we are committed to innovation and improvement. We will continue to strengthen our systems, introduce technology-driven solutions, and expand our global network to create more secure and diverse opportunities for Sri Lankans across the world. Together with our partners, stakeholders, and most importantly, the workers themselves, we remain dedicated to fostering a brighter, more prosperous future.</p>
-            <p class="abt-founder-thanks">Thank you for your trust and support in our shared vision.</p>
-            <p class="abt-founder-sig">P. C. GAYAN FERNANDO<br>Founder &amp; Chairman<br>SIN Travels &amp; Manpower Agency</p>
+            @foreach(__('about.founder.paragraphs') as $paragraph)
+            <p>{{ $paragraph }}</p>
+            @endforeach
+            <p class="abt-founder-thanks">{{ __('about.founder.thanks') }}</p>
+            <p class="abt-founder-sig">{!! __('about.founder.signature') !!}</p>
         </div>
     </div>
 </section>
@@ -251,21 +250,21 @@
 <section class="abt-cta">
     <div class="abt-container abt-text-center">
         <div class="abt-cta-inner">
-            <h2>Ready to Start Your Journey?</h2>
-            <p>Join thousands of professionals who have trusted us with their career aspirations.</p>
+            <h2>{{ __('about.cta.title') }}</h2>
+            <p>{{ __('about.cta.description') }}</p>
             <div class="abt-cta-buttons">
                 <a href="/services" class="abt-btn-primary">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
                         <rect width="20" height="14" x="2" y="6" rx="2"></rect>
                     </svg>
-                    Browse Services
+                    {{ __('about.cta.buttons.services') }}
                 </a>
                 <a href="/contact" class="abt-btn-outline">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                     </svg>
-                    Get In Touch
+                    {{ __('about.cta.buttons.contact') }}
                 </a>
             </div>
         </div>
@@ -275,17 +274,17 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const team = [{
-                name: 'P. C. Gayan Fernando',
+                name: 'Mr.Sampath',
                 role: 'Founder & Chairman',
                 img: '/images/team/team1.jpg'
             },
             {
-                name: 'Team Member',
+                name: 'Mr.Gayan',
                 role: 'Director (licensye)',
                 img: '/images/team/team2.jpg'
             },
             {
-                name: 'Team Member',
+                name: 'Ms.Anjalee',
                 role: 'Recruitment Officer',
                 img: '/images/team/team3.jpg'
             },
@@ -300,15 +299,11 @@
                 img: '/images/team/team9.jpg'
             },
             {
-                name: 'Team Member',
-                role: 'Operations',
+                name: 'Ms.Sugandhi',
+                role: 'Operations Manager',
                 img: '/images/team/team6.jpg'
             },
-            {
-                name: 'Team Member',
-                role: 'Customer Support',
-                img: '/images/team/team7.jpg'
-            },
+          
             {
                 name: 'Team Member',
                 role: 'Documentation',

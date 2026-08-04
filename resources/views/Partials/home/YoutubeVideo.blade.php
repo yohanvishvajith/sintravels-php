@@ -1,6 +1,6 @@
 <section class="youtube-videos">
     <div class="video-container">
-        <h2 class="video-title">Watch Our Stories</h2>
+        <h2 class="video-title">{{ __('home.youtube.title') }}</h2>
         <div class="video-slider-wrapper">
             <div class="video-slider">
                 <div class="video-slide active">

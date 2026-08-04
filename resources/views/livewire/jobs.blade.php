@@ -177,7 +177,7 @@ new class extends Component
                     </div>
                 </div>
                 <div class="jb-card-actions">
-                    <button class="jb-btn-primary" wire:click="$dispatch('openJobModal', { jobId: '{{ $job->id }}' })">View Job</button>
+                    <button class="jb-btn-primary" onclick="document.getElementById('jb-page-loading-overlay').style.display='flex'; window.dispatchEvent(new CustomEvent('openJobModal', { detail: { jobId: '{{ $job->id }}' } }));">View Job</button>
                     <button class="jb-btn-outline" onclick="document.getElementById('jb-contact-modal-overlay').style.display='flex'">Contact to Apply</button>
                 </div>
                 <div class="jb-card-footer">
@@ -268,11 +268,11 @@ new class extends Component
         <div class="jb-contact-modal-actions">
             <a href="tel:+94334200240" class="jb-contact-btn jb-contact-btn-call">
                 <i class="fas fa-phone"></i>
-                Call +94 334 200 240
+                Call +94 778 049 809
             </a>
-            <a href="https://wa.me/94761418949" target="_blank" rel="noopener noreferrer" class="jb-contact-btn jb-contact-btn-wa">
+            <a href="https://wa.me/94778049809" target="_blank" rel="noopener noreferrer" class="jb-contact-btn jb-contact-btn-wa">
                 <i class="fab fa-whatsapp"></i>
-                WhatsApp +94 761 418 949
+                WhatsApp +94 778 049 809
             </a>
         </div>
     </div>
@@ -280,4 +280,42 @@ new class extends Component
 
 {{-- Job Detail Modal Component --}}
 <livewire:job-detail-modal />
+
+<!-- Page-centered loading overlay shown while opening job modal -->
+@include('livewire.Partials.job-detail-skeleton')
+
+<script>
+    (function(){
+        // Hide overlay when modal has opened or closed
+        window.addEventListener('jobModalOpened', function(){
+            var el = document.getElementById('jb-page-loading-overlay'); if(el) el.style.display = 'none';
+        });
+        window.addEventListener('jobModalClosed', function(){
+            var el = document.getElementById('jb-page-loading-overlay'); if(el) el.style.display = 'none';
+        });
+        // Optional: hide overlay and close modal if user clicks it
+        document.addEventListener('click', function(e){
+            var el = document.getElementById('jb-page-loading-overlay');
+            if(!el) return;
+            if(e.target === el) {
+                el.style.display = 'none';
+                window.dispatchEvent(new CustomEvent('closeJobModal'));
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e){
+            if(e.key === 'Escape' || e.key === 'Esc'){
+                var el = document.getElementById('jb-page-loading-overlay'); if(el) el.style.display = 'none';
+                window.dispatchEvent(new CustomEvent('closeJobModal'));
+            }
+        });
+        // Add keyframes for modal skeleton pulse
+        var style = document.createElement('style');
+        style.innerHTML = '@keyframes skeletonPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }';
+        document.head.appendChild(style);
+    })();
+</script>
+
 </div>
+ 

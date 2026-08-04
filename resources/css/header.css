@@ -90,18 +90,20 @@
 /* Hamburger and drawer styles for small screens (<=540px) */
 .nav-hamburger {
     display: none;
-    background: transparent;
-    border: 0;
-    padding: 0 6px;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0.45rem;
     cursor: pointer;
     width: auto;
     height: 40px;
     position: relative;
-    font-size: 1.5rem;
-    color: #fff;
+    font-size: 1.3rem;
+    color: #111;
     align-items: center;
     justify-content: center;
-    margin-right: 4px;
+    margin-right: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .nav-drawer {

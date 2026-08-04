@@ -1,15 +1,15 @@
 <section class="cta">
     <div class="cta-container">
-        <h2>Ready to Transform Your Career?</h2>
-        <p>Join thousands of professionals who have successfully advanced their careers with our expert guidance and global network.</p>
+        <h2>{{ __('home.cta.title') }}</h2>
+        <p>{{ __('home.cta.description') }}</p>
         <div class="cta-buttons">
-            <a href="#" class="btn-find-jobs">Browse Jobs</a>
-            <a href="#" class="btn-get-in-touch">Get In Touch</a>
+            <a href="#" class="btn-find-jobs">{{ __('home.cta.buttons.browse_jobs') }}</a>
+            <a href="#" class="btn-get-in-touch">{{ __('home.cta.buttons.get_in_touch') }}</a>
         </div>
         <div class="cta-benefits">
-            <span><i class="fas fa-check-circle"></i> Free consultation</span>
-            <span><i class="fas fa-check-circle"></i> Expert career guidance</span>
-            <span><i class="fas fa-check-circle"></i> Global opportunities</span>
+            <span><i class="fas fa-check-circle"></i> {{ __('home.cta.benefits.consultation') }}</span>
+            <span><i class="fas fa-check-circle"></i> {{ __('home.cta.benefits.guidance') }}</span>
+            <span><i class="fas fa-check-circle"></i> {{ __('home.cta.benefits.opportunities') }}</span>
         </div>
     </div>
 </section>

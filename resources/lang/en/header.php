@@ -6,4 +6,5 @@ return [
     'services' => 'Services',
     'about' => 'About',
     'contact' => 'Contact',
+    'browse_jobs' => 'Browse Jobs',
 ];

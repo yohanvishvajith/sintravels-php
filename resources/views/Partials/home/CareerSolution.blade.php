@@ -1,68 +1,68 @@
 <section class="career-solutions">
     <div class="solutions-container">
         <div class="solutions-heading">
-            <h2>Comprehensive Career Solutions</h2>
-            <p>From job placement to career development, we offer end-to-end services to help you achieve your professional goals.</p>
+            <h2>{{ __('home.career_solution.title') }}</h2>
+            <p>{{ __('home.career_solution.description') }}</p>
         </div>
         <div class="solutions-grid">
             <div class="solution-card">
                 <i class="fas fa-briefcase"></i>
-                <h3>Job Placement</h3>
-                <p>Connect with top employers across various industries and secure your dream job.</p>
+                <h3>{{ __('home.career_solution.cards.job_placement.title') }}</h3>
+                <p>{{ __('home.career_solution.cards.job_placement.description') }}</p>
                 <ul>
-                    <li>Personalized matching</li>
-                    <li>Interview preparation</li>
-                    <li>Salary negotiation</li>
+                    <li>{{ __('home.career_solution.cards.job_placement.items.personalized_matching') }}</li>
+                    <li>{{ __('home.career_solution.cards.job_placement.items.interview_preparation') }}</li>
+                    <li>{{ __('home.career_solution.cards.job_placement.items.salary_negotiation') }}</li>
                 </ul>
             </div>
             <div class="solution-card">
                 <i class="fas fa-users"></i>
-                <h3>Recruitment Solutions</h3>
-                <p>Comprehensive recruitment services for businesses seeking top talent.</p>
+                <h3>{{ __('home.career_solution.cards.recruitment.title') }}</h3>
+                <p>{{ __('home.career_solution.cards.recruitment.description') }}</p>
                 <ul>
-                    <li>Talent sourcing</li>
-                    <li>Screening process</li>
-                    <li>Onboarding support</li>
+                    <li>{{ __('home.career_solution.cards.recruitment.items.talent_sourcing') }}</li>
+                    <li>{{ __('home.career_solution.cards.recruitment.items.screening_process') }}</li>
+                    <li>{{ __('home.career_solution.cards.recruitment.items.onboarding_support') }}</li>
                 </ul>
             </div>
             <div class="solution-card">
                 <i class="fas fa-cogs"></i>
-                <h3>Skills Training</h3>
-                <p>Professional development programs to enhance your career prospects.</p>
+                <h3>{{ __('home.career_solution.cards.skills_training.title') }}</h3>
+                <p>{{ __('home.career_solution.cards.skills_training.description') }}</p>
                 <ul>
-                    <li>Soft skills</li>
-                    <li>Language Training(Currently Japanese,English)</li>
-                    <li>Industry and government certifications and training</li>
+                    <li>{{ __('home.career_solution.cards.skills_training.items.soft_skills') }}</li>
+                    <li>{{ __('home.career_solution.cards.skills_training.items.language_training') }}</li>
+                    <li>{{ __('home.career_solution.cards.skills_training.items.certifications') }}</li>
                 </ul>
             </div>
             <div class="solution-card">
                 <i class="fas fa-plane-departure"></i>
-                <h3>International Placement</h3>
-                <p>Global job opportunities with visa and relocation assistance.</p>
+                <h3>{{ __('home.career_solution.cards.international_placement.title') }}</h3>
+                <p>{{ __('home.career_solution.cards.international_placement.description') }}</p>
                 <ul>
-                    <li>Visa processing</li>
-                    <li>Relocation support</li>
-                    <li>Cultural orientation</li>
+                    <li>{{ __('home.career_solution.cards.international_placement.items.visa_processing') }}</li>
+                    <li>{{ __('home.career_solution.cards.international_placement.items.relocation_support') }}</li>
+                    <li>{{ __('home.career_solution.cards.international_placement.items.cultural_orientation') }}</li>
                 </ul>
             </div>
             <div class="solution-card">
                 <i class="fas fa-comments"></i>
-                <h3>Career Counseling</h3>
-                <p>Expert guidance to help you make informed career decisions.</p>
+                <h3>{{ __('home.career_solution.cards.career_counseling.title') }}</h3>
+                <p>{{ __('home.career_solution.cards.career_counseling.description') }}</p>
                 <ul>
-                    <li>Career assessment</li>
-                    <li>Goal setting</li>
-                    <li>Action planning</li>
+                    <li>{{ __('home.career_solution.cards.career_counseling.items.career_assessment') }}</li>
+                    <li>{{ __('home.career_solution.cards.career_counseling.items.goal_setting') }}</li>
+                    <li>{{ __('home.career_solution.cards.career_counseling.items.action_planning') }}</li>
                 </ul>
             </div>
             <div class="solution-card">
                 <i class="fas fa-building"></i>
-                <h3>Corporate Solutions</h3>
-                <p>Tailored workforce solutions for enterprises and organizations.</p>
+                <h3>{{ __('home.career_solution.cards.corporate_solutions.title') }}</h3>
+                <p>{{ __('home.career_solution.cards.corporate_solutions.description') }}</p>
                 <ul>
-                    <li>Bulk hiring</li>
-                    <li>Contract staffing</li>
-                    <li>Workforce planning</li>
+                    <li>{{ __('home.career_solution.cards.corporate_solutions.items.bulk_hiring') }}</li>
+                    <li>{{ __('home.career_solution.cards.corporate_solutions.items.contract_staffing') }}</li>
+                    <li>{{ __('home.career_solution.cards.corporate_solutions.items.workforce_planning') }}</li>
                 </ul>
             </div>
         </div>

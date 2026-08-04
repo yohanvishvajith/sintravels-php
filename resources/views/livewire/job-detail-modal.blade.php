@@ -27,13 +27,16 @@ new class extends Component
                 'created_at' => now(),
             ]);
         }
+        $this->dispatch('jobModalOpened');
     }
 
+    #[On('closeJobModal')]
     public function closeModal(): void
     {
         $this->isModalOpen = false;
         $this->selectedJob = null;
         $this->jobId = null;
+        $this->dispatch('jobModalClosed');
     }
 
     public function render()
@@ -44,7 +47,8 @@ new class extends Component
 
 ?>
 
-<div x-data="{ modalOpen: $wire.entangle('isModalOpen') }">
+<div x-data="{ modalOpen: $wire.entangle('isModalOpen') }" x-on:closeJobModal.window="modalOpen = false">
+    {{--
     <div
         wire:loading.flex
         wire:target="openModal"
@@ -55,17 +59,18 @@ new class extends Component
             <p class="text-sm font-medium text-gray-600">Loading job details...</p>
         </div>
     </div>
+    --}}
 
     <!-- Modal -->
     <div
         x-show="modalOpen"
         x-transition
         class="fixed inset-0 backdrop-blur-sm flex items-center justify-center z-50"
-        @click.self="$wire.closeModal()"
+        @click.self="modalOpen = false; $wire.closeModal()"
     >
         @if ($selectedJob)
-            <div class="bg-white rounded-lg shadow-lg max-w-3xl w-auto p-5 max-h-[90vh] overflow-y-auto" style="overflow:auto; scrollbar-width:none; -ms-overflow-style:none;">
-                <div class="flex justify-between items-start mb-6">
+            <div class="bg-white rounded-lg shadow-lg max-w-3xl w-auto  max-h-[90vh] overflow-y-auto" style="overflow:auto; scrollbar-width:none; -ms-overflow-style:none;">
+                <div class="flex justify-between items-start mb-6 bg-gradient-to-br from-blue-600 to-blue-700 p-5">
                     <div class="flex items-center gap-3">
                         @if ($selectedJob->country && $selectedJob->countryData)
                         <img src="{{ asset($selectedJob->countryData->flagimg) }}" alt="{{ $selectedJob->country }} flag" style="width: 48px; height: 32px; border-radius: 4px; object-fit: cover;">
@@ -76,6 +81,7 @@ new class extends Component
                         </div>
                     </div>
                     <button
+                        @click="modalOpen = false"
                         wire:click="closeModal"
                         class="text-gray-500 hover:text-gray-700 text-3xl font-bold"
                     >
@@ -83,7 +89,7 @@ new class extends Component
                     </button>
                 </div>
 
-                <div class="space-y-6">
+                <div class="space-y-6 p-5">
                     <!-- Salary and Basic Info -->
                     <div class="bg-green-50 p-4 rounded-lg">
                         <p class="text-3xl font-bold text-green-600">
@@ -194,7 +200,7 @@ new class extends Component
                     @endif
                 </div>
 
-                <div class="mt-8 flex gap-3">
+                <div class="mt-8 flex gap-3 p-5">
                     <button
                         wire:click="closeModal"
                         class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-900 font-semibold py-3 px-4 rounded-lg transition"

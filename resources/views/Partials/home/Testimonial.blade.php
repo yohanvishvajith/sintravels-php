@@ -1,8 +1,8 @@
 <section class="testimonials">
     <div class="testimonial-container">
         <div class="text-center mb-16">
-            <h2 class="testimonial-title">Success Stories from Our Clients</h2>
-            <p class="testimonial-subtitle">Hear from professionals who transformed their careers with our help</p>
+            <h2 class="testimonial-title">{{ __('home.testimonials.heading') }}</h2>
+            <p class="testimonial-subtitle">{{ __('home.testimonials.subtitle') }}</p>
         </div>
 
         <div class="testimonial-slider-wrapper">
@@ -10,16 +10,16 @@
                 <div class="testimonial-slide">
                     <div class="testimonial-content">
                         <i class="fas fa-quote-left quote-icon"></i>
-                        <blockquote>"SIN Manpower guided me from application to arrival. I appreciated their attention to detail and timely communication."</blockquote>
+                        <blockquote>"{{ __('home.testimonials.cards.shasheen.quote') }}"</blockquote>
                         <div class="testimonial-meta">
                             <div class="avatar-wrap">
-                                <img src="/images/default-avatar-profile-icon-social.webp"  loading="lazy" alt="Shasheen Rathnayaka">
+                                <img src="/images/default-avatar-profile-icon-social.webp"  loading="lazy" alt="{{ __('home.testimonials.cards.shasheen.author') }}">
                             </div>
                             <div class="testimonial-author">
-                                <h4>Shasheen Rathnayaka</h4>
+                                <h4>{{ __('home.testimonials.cards.shasheen.author') }}</h4>
                                 <div class="author-location">
-                                    <img src="https://flagcdn.com/24x18/ro.png"  loading="lazy" alt="Rumeniya" class="flag-small">
-                                    <span class="location-label">Rumeniya</span>
+                                    <img src="https://flagcdn.com/24x18/ro.png"  loading="lazy" alt="{{ __('home.testimonials.cards.shasheen.location') }}" class="flag-small">
+                                    <span class="location-label">{{ __('home.testimonials.cards.shasheen.location') }}</span>
                                 </div>
                             </div>
                             <div class="rating">
@@ -32,16 +32,16 @@
                 <div class="testimonial-slide">
                     <div class="testimonial-content">
                         <i class="fas fa-quote-left quote-icon"></i>
-                        <blockquote>"Great support throughout the visa and placement process. I now have a stable job in Dubai thanks to their team."</blockquote>
+                        <blockquote>"{{ __('home.testimonials.cards.sameera.quote') }}"</blockquote>
                         <div class="testimonial-meta">
                             <div class="avatar-wrap">
-                                <img src="/images/default-avatar-profile-icon-social.webp"  loading="lazy" alt="Sameera Madushanka">
+                                <img src="/images/default-avatar-profile-icon-social.webp"  loading="lazy" alt="{{ __('home.testimonials.cards.sameera.author') }}">
                             </div>
                             <div class="testimonial-author">
-                                <h4>Sameera Madushanka</h4>
+                                <h4>{{ __('home.testimonials.cards.sameera.author') }}</h4>
                                 <div class="author-location">
-                                    <img src="https://flagcdn.com/24x18/ae.png"  loading="lazy" alt="Dubai" class="flag-small">
-                                    <span class="location-label">Dubai</span>
+                                    <img src="https://flagcdn.com/24x18/ae.png"  loading="lazy" alt="{{ __('home.testimonials.cards.sameera.location') }}" class="flag-small">
+                                    <span class="location-label">{{ __('home.testimonials.cards.sameera.location') }}</span>
                                 </div>
                             </div>
                             <div class="rating">
@@ -54,16 +54,16 @@
                 <div class="testimonial-slide">
                     <div class="testimonial-content">
                         <i class="fas fa-quote-left quote-icon"></i>
-                        <blockquote>"Professional agency that helped me find a role quickly. The staff were very supportive and responsive."</blockquote>
+                        <blockquote>"{{ __('home.testimonials.cards.priya.quote') }}"</blockquote>
                         <div class="testimonial-meta">
                             <div class="avatar-wrap">
-                                <img src="/images/default-avatar-profile-icon-social.webp"  loading="lazy" alt="J Priya">
+                                <img src="/images/default-avatar-profile-icon-social.webp"  loading="lazy" alt="{{ __('home.testimonials.cards.priya.author') }}">
                             </div>
                             <div class="testimonial-author">
-                                <h4>J Priya</h4>
+                                <h4>{{ __('home.testimonials.cards.priya.author') }}</h4>
                                 <div class="author-location">
-                                    <img src="https://flagcdn.com/24x18/kw.png"  loading="lazy" alt="Kuwait" class="flag-small">
-                                    <span class="location-label">Kuwait</span>
+                                    <img src="https://flagcdn.com/24x18/kw.png"  loading="lazy" alt="{{ __('home.testimonials.cards.priya.location') }}" class="flag-small">
+                                    <span class="location-label">{{ __('home.testimonials.cards.priya.location') }}</span>
                                 </div>
                             </div>
                             <div class="rating">
@@ -76,16 +76,16 @@
                 <div class="testimonial-slide">
                     <div class="testimonial-content">
                         <i class="fas fa-quote-left quote-icon"></i>
-                        <blockquote>"Excellent placement service and helpful guidance on paperwork and travel arrangements."</blockquote>
+                        <blockquote>"{{ __('home.testimonials.cards.indika.quote') }}"</blockquote>
                         <div class="testimonial-meta">
                             <div class="avatar-wrap">
-                                <img src="/images/default-avatar-profile-icon-social.webp"  loading="lazy" alt="Indika Roshan">
+                                <img src="/images/default-avatar-profile-icon-social.webp"  loading="lazy" alt="{{ __('home.testimonials.cards.indika.author') }}">
                             </div>
                             <div class="testimonial-author">
-                                <h4>Indika Roshan</h4>
+                                <h4>{{ __('home.testimonials.cards.indika.author') }}</h4>
                                 <div class="author-location">
-                                    <img src="https://flagcdn.com/24x18/md.png"  loading="lazy" alt="Moldova" class="flag-small">
-                                    <span class="location-label">Moldova</span>
+                                    <img src="https://flagcdn.com/24x18/md.png"  loading="lazy" alt="{{ __('home.testimonials.cards.indika.location') }}" class="flag-small">
+                                    <span class="location-label">{{ __('home.testimonials.cards.indika.location') }}</span>
                                 </div>
                             </div>
                             <div class="rating">
@@ -98,16 +98,16 @@
                 <div class="testimonial-slide">
                     <div class="testimonial-content">
                         <i class="fas fa-quote-left quote-icon"></i>
-                        <blockquote>"They matched me to a role that fit my skills and helped me settle in quickly. Highly recommended."</blockquote>
+                        <blockquote>"{{ __('home.testimonials.cards.dinesh.quote') }}"</blockquote>
                         <div class="testimonial-meta">
                             <div class="avatar-wrap">
-                                <img src="/images/default-avatar-profile-icon-social.webp"  loading="lazy" alt="Dinesh Bandara">
+                                <img src="/images/default-avatar-profile-icon-social.webp"  loading="lazy" alt="{{ __('home.testimonials.cards.dinesh.author') }}">
                             </div>
                             <div class="testimonial-author">
-                                <h4>Dinesh Bandara</h4>
+                                <h4>{{ __('home.testimonials.cards.dinesh.author') }}</h4>
                                 <div class="author-location">
-                                    <img src="https://flagcdn.com/24x18/jp.png"  loading="lazy" alt="Japan" class="flag-small">
-                                    <span class="location-label">Japan</span>
+                                    <img src="https://flagcdn.com/24x18/jp.png"  loading="lazy" alt="{{ __('home.testimonials.cards.dinesh.location') }}" class="flag-small">
+                                    <span class="location-label">{{ __('home.testimonials.cards.dinesh.location') }}</span>
                                 </div>
                             </div>
                             <div class="rating">
@@ -120,16 +120,16 @@
                 <div class="testimonial-slide">
                     <div class="testimonial-content">
                         <i class="fas fa-quote-left quote-icon"></i>
-                        <blockquote>"I received excellent support from start to finish. The team made the relocation process smooth and stress-free."</blockquote>
+                        <blockquote>"{{ __('home.testimonials.cards.prabashani.quote') }}"</blockquote>
                         <div class="testimonial-meta">
                             <div class="avatar-wrap">
-                                <img src="/images/default-avatar-profile-icon-social.webp"  loading="lazy" alt="Prabashani Subashingha">
+                                <img src="/images/default-avatar-profile-icon-social.webp"  loading="lazy" alt="{{ __('home.testimonials.cards.prabashani.author') }}">
                             </div>
                             <div class="testimonial-author">
-                                <h4>Prabashani Subashingha</h4>
+                                <h4>{{ __('home.testimonials.cards.prabashani.author') }}</h4>
                                 <div class="author-location">
-                                    <img src="https://flagcdn.com/24x18/om.png"  loading="lazy" alt="Oman" class="flag-small">
-                                    <span class="location-label">Oman</span>
+                                    <img src="https://flagcdn.com/24x18/om.png"  loading="lazy" alt="{{ __('home.testimonials.cards.prabashani.location') }}" class="flag-small">
+                                    <span class="location-label">{{ __('home.testimonials.cards.prabashani.location') }}</span>
                                 </div>
                             </div>
                             <div class="rating">

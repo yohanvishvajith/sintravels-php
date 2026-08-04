@@ -1,7 +1,7 @@
     <section class="interactive-map">
         <div class="map-container">
-            <h2 class="map-title">We're Global</h2>
-            <p class="map-subtitle">Our network spans across the globe, connecting talent with opportunities in numerous countries. Hover over the highlighted countries to learn more.</p>
+            <h2 class="map-title">{{ __('home.map.title') }}</h2>
+            <p class="map-subtitle">{{ __('home.map.subtitle') }}</p>
             <div id="world-map"></div>
             <div id="map-tooltip"></div>
         </div>
@@ -11,7 +11,8 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const countriesData = @json($countries ?? []);
-        
+        const jobsLabel = @json(__('home.map.tooltip_jobs'));
+
         // Create a map of country names to job counts
         const countryJobMap = {};
         countriesData.forEach(country => {
@@ -26,7 +27,7 @@
             onRegionTipShow(e, el, code) {
                 const countryName = el.innerHTML;
                 const jobCount = countryJobMap[countryName] || 0;
-                el.innerHTML = `${countryName}<br/>Jobs: ${jobCount}`;
+                el.innerHTML = `${countryName}<br/>${jobsLabel}: ${jobCount}`;
             },
             regionStyle: {
                 initial: {

@@ -1,5 +1,6 @@
 @import "./header.css";
 @import "./sidebar.css";
+@import "@fortawesome/fontawesome-free/css/all.css";
 @import "../components/jobform.css";
 /* Reset default styles */
 body {

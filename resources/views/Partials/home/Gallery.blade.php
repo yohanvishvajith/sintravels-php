@@ -1,6 +1,6 @@
 <section class="gallery">
     <div class="gallery-container">
-        <h2 class="gallery-title">Our Gallery</h2>
+        <h2 class="gallery-title">{{ __('home.gallery.title') }}</h2>
         <div class="gallery-wrapper">
             <div class="gallery-slider">
                 <img src="{{ asset('images/gallery/gallery02.jpg') }}" alt="Gallery Image 2"  loading="lazy">
